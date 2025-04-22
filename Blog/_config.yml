@@ -3,18 +3,21 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Atl212
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Atl212
 language: en
-timezone: ''
+timezone: 'Asia/Tokyo'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: http://atl212.com
+
+# permalink: :year/:month/:day/:title/
+permalink: :title/
+
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -46,7 +49,7 @@ future: true
 syntax_highlighter: highlight.js
 highlight:
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace: ''
   wrap: true
   hljs: false
@@ -96,9 +99,29 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
+
+# 分页配置：后添加的
+# 归档页的分页设置
+archive_generator:
+  per_page: 30
+  yearly: true
+  monthly: true
+# 标签页的分页设置
+tag_generator:
+  per_page: 20
+
+# 站内搜索
+# 需要安装插件：npm install hexo-generator-searchdb --save
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 100
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/Atl212/Atl212_Hexo.github.io
+  branch: master
