@@ -3,21 +3,24 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Home
-subtitle: ''
-description: ''
+title: Atl212
+subtitle: 'A Personal Website.'
+description: 'Just a software engineer website.'
 keywords:
 author: Atl212
-language: en
-timezone: ''
+language: 
+  - zh-CN
+  - en
+  - zh-TW
+  - zh-HK
+  - ja
+timezone: 'Asia/Tokyo'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://atl212.com
+url: https://www.atl212.com/Atl212_Hexo.github.io/
 
-# permalink: :year/:month/:day/:title/
-permalink: :title/
-
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -105,12 +108,14 @@ theme: next
 search:
   path: search.xml
   field: post
+  content: true
   format: html
-  limit: 100
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: https://github.com/Atl212/Atl212_Hexo.github.io
+  repo: https://github.com/Atl212/Atl212_Hexo.github.io
   branch: master
+  # message: Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})
+

@@ -1,6 +1,5 @@
 ---
 title: categories
-date: 2025-04-20 16:56:40
-type: "categories"
-comments: false
+date: 2025-04-23 13:03:54
+type: categories
 ---
