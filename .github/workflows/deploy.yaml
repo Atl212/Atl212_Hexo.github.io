@@ -1,5 +1,4 @@
 # Sample workflow for building and deploying a Hexo site to GitHub Pages
-
 name: Deploy
 
 on:
@@ -38,7 +37,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
-          path: ./Blog
+          path: Blog
     
       - name: Use Node.js 23
         uses: actions/setup-node@v4
@@ -50,27 +49,27 @@ jobs:
       - name: Cache NPM dependencies
         uses: actions/cache@v4
         with:
-          path: ./Blog/node_modules
+          path: Blog/node_modules
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
     
       - name: Install Dependencies
         run: npm install
-        working-directory: ./Blog
+        working-directory: Blog
 
       - name: Build
         run: npm run build
-        working-directory: ./Blog
+        working-directory: Blog
     
       - name: Build with Hexo
         run: npx hexo g
-        working-directory: ./Blog
+        working-directory: Blog
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./Blog/public
+          path: Blog/public
   
   deploy:
     needs: build
