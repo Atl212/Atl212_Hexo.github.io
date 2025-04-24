@@ -61,11 +61,11 @@ jobs:
         run: npm install -g hexo-cli
         working-directory: Blog
 
-      - name: Generate static pages
-        run: |
-          # hexo clean
-          hexo generate --debug
-        working-directory: Blog
+      # - name: Generate static pages
+      #   run: |
+      #     # hexo clean
+      #     hexo generate --debug
+      #   working-directory: Blog
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
