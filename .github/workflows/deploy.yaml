@@ -37,6 +37,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
     
       - name: Use Node.js 23
         uses: actions/setup-node@v4
@@ -56,10 +60,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: Blog
+      
+      - name: Build with Hexo
+        run: npx hexo g
 
-      - name: Install Hexo CLI
-        run: npm install -g hexo-cli
-        working-directory: Blog
+      # - name: Install Hexo CLI
+      #   run: npm install -g hexo-cli
+      #   working-directory: Blog
 
       # - name: Generate static pages
       #   run: |
