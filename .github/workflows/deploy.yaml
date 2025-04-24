@@ -61,14 +61,10 @@ jobs:
         run: npm install -g hexo-cli
         working-directory: Blog
 
-      - name: Build
-        run: npm run build
-        working-directory: Blog
-
       - name: Generate static pages
         run: |
           # hexo clean
-          hexo generate
+          hexo generate --debug
         working-directory: Blog
 
       - name: Upload Pages artifact
