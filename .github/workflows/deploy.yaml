@@ -43,7 +43,7 @@ jobs:
         with:
           # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
           # Ref: https://github.com/actions/setup-node#supported-version-syntax
-          node-version: "20"
+          node-version: "current"
     
       - name: Cache NPM dependencies
         uses: actions/cache@v4
@@ -59,6 +59,10 @@ jobs:
 
       - name: Install Hexo CLI
         run: npm install -g hexo-cli
+        working-directory: Blog
+
+      - name: Build
+        run: npm run build
         working-directory: Blog
 
       - name: Generate static pages
