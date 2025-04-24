@@ -57,12 +57,12 @@ jobs:
         run: npm install
         working-directory: Blog
 
-      - name: Build
-        run: npm run build
+      - name: Install Hexo CLI
+        run: npm install -g hexo-cli
         working-directory: Blog
-    
-      - name: Build with Hexo
-        run: npx hexo g
+
+      - name: Generate static pages
+        run: hexo generate
         working-directory: Blog
 
       - name: Upload Pages artifact
