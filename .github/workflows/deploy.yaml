@@ -63,7 +63,7 @@ jobs:
 
       - name: Generate static pages
         run: |
-          # hexo clean
+          hexo clean
           hexo generate --debug
         working-directory: Blog
 
