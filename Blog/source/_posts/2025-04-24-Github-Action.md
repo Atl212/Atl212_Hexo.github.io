@@ -1,12 +1,14 @@
 ---
 title: Github Action
-date: 2025-04-24 12:54:23
-categories: [Github]
+categories:
+  - Github
 tags:
   - Github
   - Action
   - 部署
   - 路径
+abbrlink: 62980
+date: 2025-04-24 12:54:23
 ---
 
 <!-- more --> 

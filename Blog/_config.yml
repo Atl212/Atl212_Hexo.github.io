@@ -20,7 +20,9 @@ timezone: 'Asia/Tokyo'
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://www.atl212.com/Atl212_Hexo.github.io/
 
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/
+
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -35,6 +37,8 @@ category_dir: categories
 
 code_dir: downloads/code
 i18n_dir: :lang
+
+# skip render some page or resource
 skip_render:
 
 # Writing
@@ -113,12 +117,21 @@ ignore:
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 theme: next
+# theme: fluid
 
 search:
   path: search.xml
   field: post
   content: true
   format: html
+
+# abbrlink config
+abbrlink:
+  alg: crc32      # Algorithm used to calc abbrlink. Support crc16(default) and crc32
+  rep: hex        # Representation of abbrlink in URLs. Support dec(default) and hex
+  drafts: false   # Whether to generate abbrlink for drafts. (false in default)
+  force: false    # Enable force mode. In this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had an abbrlink. (false in default)
+  writeback: true # Whether to write changes to front-matters back to the actual markdown files. (true in default)
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
