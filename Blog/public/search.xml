@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>某类幂函数不定积分的步骤</title>
+    <url>/Atl212_Hexo.github.io/posts/23601/</url>
+    <content><![CDATA[<p>$$<br>\int x^{α}dx &#x3D; \int \frac{x^{α+1}}{α+1}+c(α\neq-1)<br>$$</p>
+<p>我们知道幂函数的不定积分公式一般都可以表示为这个式子（除了指数等于-1），但是如果每次都按照式子的步骤来写就会感到麻烦。</p>
+<p>当α是整数时候还好，如果α是”分数”或者是”负数”或者是”负数的分数”时候，因为分母的系数是在下方所以要除了算出来外，最后还要倒过来。</p>
+<p>特别是负数的分数如 -（1 &#x2F; 2）时，-（1 &#x2F; 2）+ 1 &#x3D; （1 &#x2F; 2）倒过来系数为2，本人在因为在运算中跳步错过几次，吃了亏。</p>
+<p>那么有没有更简洁的方法，保证我们运算简单点并且保证准确性。</p>
+<span id="more"></span> 
+
+<p>通过观察式子我们可以发现，幂函数的指数和系数是一样的，都是α + 1，不同在于系数要倒过来。所以运算时我们可以这样。</p>
+<p>$$<br>\int x^{α}dx \rightarrow x^{α+1} \rightarrow \frac{1}{α+1}x^{α+1}+c<br>$$</p>
+<p>先写出指数加一得到的数，然后把得到的指数倒过来就变成了前面的系数。举例子：</p>
+<p>$$<br>\int x^{-\frac{1}{2}}dx \rightarrow x^{\frac{1}{2}} \rightarrow 2x^{\frac{1}{2}}+c<br>$$</p>
+<p>$$<br>\int x^{-\frac{4}{3}}dx \rightarrow x^{-\frac{1}{3}} \rightarrow -3x^{-\frac{1}{3}}+c<br>$$</p>
+<p>写出来后不要忘记加c即可。</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>高等数学</tag>
+        <tag>不定积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《白话机器学习的数学》正则化实现代码</title>
+    <url>/Atl212_Hexo.github.io/posts/26314/</url>
+    <content><![CDATA[<p>实现代码：</p>
+<span id="more"></span> 
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 真正的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">g</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.1</span> * (x ** <span class="number">3</span> + x ** <span class="number">2</span> + x)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 随意准备一些向真正的函数加入了一点噪声的训练数据</span></span><br><span class="line">train_x = np.linspace (-<span class="number">2</span>,<span class="number">2</span>,<span class="number">8</span>)</span><br><span class="line">train_y =g(train_x)+ np.random.randn(train_x.size) * <span class="number">0.05</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 绘图确认</span></span><br><span class="line">x = np.linspace(-<span class="number">2</span>,<span class="number">2</span>,<span class="number">100</span>)</span><br><span class="line">plt.plot(train_x, train_y, <span class="string">&#x27;o&#x27;</span>)</span><br><span class="line">plt.plot(x, g(x), linestyle = <span class="string">&#x27;dashed&#x27;</span>)</span><br><span class="line">plt.ylim(-<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">plt.show()</span><br><span class="line"> </span><br><span class="line"><span class="comment">##########</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 标准化</span></span><br><span class="line">mu = train_x.mean ()</span><br><span class="line">sigma = train_x.std()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">standardize</span> (x):</span><br><span class="line">    <span class="keyword">return</span> (x - mu)/ sigma</span><br><span class="line"> </span><br><span class="line">train_z = standardize(train_x)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 创建训练数据的矩阵</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">to_matrix</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> np.vstack([ </span><br><span class="line">        np.ones(x.size),</span><br><span class="line">        x,    </span><br><span class="line">        x ** <span class="number">2</span>,</span><br><span class="line">        x ** <span class="number">3</span>,</span><br><span class="line">        x ** <span class="number">4</span>,</span><br><span class="line">        x ** <span class="number">5</span>,</span><br><span class="line">        x ** <span class="number">6</span>,</span><br><span class="line">        x ** <span class="number">7</span>,                                           </span><br><span class="line">        x ** <span class="number">8</span>,</span><br><span class="line">        x ** <span class="number">9</span>, </span><br><span class="line">        x ** <span class="number">10</span>,</span><br><span class="line">        ]).T </span><br><span class="line"> </span><br><span class="line">X = to_matrix(train_z)</span><br><span class="line"> </span><br><span class="line"><span class="comment">#参数初始化</span></span><br><span class="line">theta= np.random.randn(X.shape[<span class="number">1</span>])</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 预测函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">f</span> (x):</span><br><span class="line">    <span class="keyword">return</span> np.dot (x,theta)</span><br><span class="line"> </span><br><span class="line"><span class="comment">##########</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 目标函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">E</span>(<span class="params">x, y</span>):</span><br><span class="line">     <span class="keyword">return</span> <span class="number">0.5</span> * np.<span class="built_in">sum</span>((y - f(x)) ** <span class="number">2</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 学习率</span></span><br><span class="line">ETA = <span class="number">1e-4</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 误差</span></span><br><span class="line">diff = <span class="number">1</span></span><br><span class="line"><span class="comment"># 重复学习</span></span><br><span class="line">error = E(X,train_y)</span><br><span class="line"><span class="keyword">while</span> diff &gt; <span class="number">1e-6</span>:</span><br><span class="line">    theta= theta - ETA * np.dot(f(X) - train_y,X)</span><br><span class="line">    current_error = E(X,train_y)</span><br><span class="line">    diff = error - current_error</span><br><span class="line">    error = current_error</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 对结果绘图</span></span><br><span class="line">z = standardize(x)</span><br><span class="line">plt.plot(train_z, train_y, <span class="string">&#x27;o&#x27;</span>)</span><br><span class="line">plt.plot(z, f(to_matrix(z)))</span><br><span class="line">plt.show()</span><br><span class="line"> </span><br><span class="line"><span class="comment">##########</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存未正则化的参数，然后再次参数初始化</span></span><br><span class="line">theta1 = theta</span><br><span class="line">theta = np.random.randn(X.shape[<span class="number">1</span>])</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 正则化常量</span></span><br><span class="line">LAMBDA = <span class="number">1</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#误差</span></span><br><span class="line">diff = <span class="number">1</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#重复学习（包含正则化项）</span></span><br><span class="line">error = E(X, train_y)</span><br><span class="line"><span class="keyword">while</span> diff &gt; <span class="number">1e-6</span>:</span><br><span class="line">    <span class="comment"># 正则化项。偏置项不适用正则化，所以为 0</span></span><br><span class="line">    reg_term = LAMBDA * np.hstack([<span class="number">0</span>, theta[<span class="number">1</span>:]])</span><br><span class="line">    <span class="comment"># 应用正则化项，更新参数</span></span><br><span class="line">    theta = theta - ETA *(np.dot(f(X) - train_y,X)+ reg_term) </span><br><span class="line">    current_error = E(X, train_y)</span><br><span class="line">    diff = error - current_error</span><br><span class="line">    error = current_error</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 对结果绘图</span></span><br><span class="line">plt.plot(train_z,train_y,<span class="string">&#x27;o&#x27;</span>)</span><br><span class="line">plt.plot(z,f(to_matrix(z)))</span><br><span class="line">plt.show()</span><br><span class="line"> </span><br><span class="line"><span class="comment">##########</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存应用了正则化的参数</span></span><br><span class="line">theta2 = theta</span><br><span class="line"> </span><br><span class="line">plt.plot(train_z, train_y, <span class="string">&#x27;o&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 画出未应用正则化的结果</span></span><br><span class="line">theta = theta1</span><br><span class="line">plt.plot(z, f(to_matrix(z)), linestyle = <span class="string">&#x27;dashed&#x27;</span>)</span><br><span class="line"><span class="comment"># 画出应用了正则化的结果</span></span><br><span class="line">theta = theta2</span><br><span class="line">plt.plot(z, f(to_matrix(z)))</span><br><span class="line"> </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>正则化</tag>
+        <tag>代码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github Action</title>
+    <url>/Atl212_Hexo.github.io/posts/62980/</url>
+    <content><![CDATA[<span id="more"></span> 
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天试着搭了hexo博客，本来部署直接用 hexo d 命令进行的部署。</p>
+<p>但是自己更习惯用 github desktop。可以自定义 commit 的名称，也可以更直观看到文件的修改情况，所以试着用 github action 部署博客。</p>
+<p>由于本人没怎么用过 action 部署，同时对于 git 拉取下来的一些文件设置也有认识不足，在此记录下部署过程遇到的几个问题。</p>
+<p>hexo generate –debug</p>
+<h2 id="yaml文件路径配置问题"><a href="#yaml文件路径配置问题" class="headerlink" title="yaml文件路径配置问题"></a>yaml文件路径配置问题</h2><h2 id="尝试构建但出现-Permission-denied"><a href="#尝试构建但出现-Permission-denied" class="headerlink" title="尝试构建但出现 Permission denied"></a>尝试构建但出现 Permission denied</h2><h2 id="部署成功但index-html文件大小为0"><a href="#部署成功但index-html文件大小为0" class="headerlink" title="部署成功但index.html文件大小为0"></a>部署成功但index.html文件大小为0</h2>]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Action</tag>
+        <tag>部署</tag>
+        <tag>路径</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>应试所学到的东西跟实际应用中的差异</title>
+    <url>/Atl212_Hexo.github.io/posts/11178/</url>
+    <content><![CDATA[<span id="more"></span> ]]></content>
+      <categories>
+        <category>tmp</category>
+      </categories>
+      <tags>
+        <tag>tmp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>他人的经历与行动细节的感受</title>
+    <url>/Atl212_Hexo.github.io/posts/49092/</url>
+    <content><![CDATA[<span id="more"></span> 
+
+<p>有些时候就比较讨厌看到一些抽象的卖惨一样的描述。</p>
+<p>例如起床然后，又有什么郁郁症之类，但最终克服了一切困难，最后获得成功之类云云的描述。</p>
+<p>我一直以来都不喜欢看到这样的表达，与之相反，我更喜欢看到一些更细致且具体的东西。</p>
+<p>例如前段时间又看到一个niko的比赛画面，当时在面对一局比赛输掉的时候，他所抱怨的不是队友，而是去自责自己没能做到更好。</p>
+<p>你通过视频中传递出来的神情，那些细节，甚至是整个情节的过程，你能够更加对所谓的某个，胜负心等抽象的概念有一个更加具体的认识。</p>
+]]></content>
+      <categories>
+        <category>tmp</category>
+      </categories>
+      <tags>
+        <tag>tmp</tag>
+      </tags>
+  </entry>
+</search>
