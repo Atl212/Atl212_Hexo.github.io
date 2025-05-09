@@ -82,6 +82,17 @@
       </tags>
   </entry>
   <entry>
+    <title>应试所学到的东西跟实际应用中的差异</title>
+    <url>/Atl212_Hexo.github.io/posts/11178/</url>
+    <content><![CDATA[<span id="more"></span> ]]></content>
+      <categories>
+        <category>tmp</category>
+      </categories>
+      <tags>
+        <tag>tmp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>部署网站关键</title>
     <url>/Atl212_Hexo.github.io/posts/2fb41cbd/</url>
     <content><![CDATA[<p>一个就是，这个 Github Action 的 deploy 配置脚本里面，其实也并不需要这个什么 hexo 部署的代码。</p>
@@ -106,17 +117,6 @@
 <p>但总之，先抄了跑了再说，反正有个所谓网站也是足够的了，也就不管了。</p>
 <p>至于是否会有什么问题，又是否会出现些不知道的错误，那么就交给后人的，或者是其他人的智慧了。</p>
 ]]></content>
-      <categories>
-        <category>tmp</category>
-      </categories>
-      <tags>
-        <tag>tmp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>应试所学到的东西跟实际应用中的差异</title>
-    <url>/Atl212_Hexo.github.io/posts/11178/</url>
-    <content><![CDATA[<span id="more"></span> ]]></content>
       <categories>
         <category>tmp</category>
       </categories>
