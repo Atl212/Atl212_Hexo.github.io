@@ -1,844 +1,309 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-  <link rel="mask-icon" href="/Atl212_Hexo.github.io/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/Atl212_Hexo.github.io/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/white/pace-theme-minimal.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.atl212.com","root":"/Atl212_Hexo.github.io/","images":"/Atl212_Hexo.github.io/images","scheme":"Mist","darkmode":false,"version":"8.23.0","exturl":true,"sidebar":{"position":"left","width_expanded":200,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":true,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Atl212_Hexo.github.io/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Atl212_Hexo.github.io/js/config.js" defer></script>
-
-    <meta name="description" content="Just a software engineer website.">
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;zh-TW&quot;,&quot;zh-HK&quot;,&quot;ja&quot;,&quot;default&quot;]" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Atl212 - A Personal Website.</title><meta name="author" content="Atl212"><meta name="copyright" content="Atl212"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Just a software engineer website.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Atl212">
 <meta property="og:url" content="https://www.atl212.com/Atl212_Hexo.github.io/index.html">
 <meta property="og:site_name" content="Atl212">
 <meta property="og:description" content="Just a software engineer website.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.atl212.com/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png">
 <meta property="article:author" content="Atl212">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.atl212.com/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png"><link rel="shortcut icon" href="/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png"><link rel="canonical" href="https://www.atl212.com/Atl212_Hexo.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Atl212_Hexo.github.io/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
-
-<link rel="canonical" href="https://www.atl212.com/Atl212_Hexo.github.io/">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Atl212 - A Personal Website.</title>
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
 
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-
-
-
-
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
-<script src="/Atl212_Hexo.github.io/js/utils.js" defer></script><script src="/Atl212_Hexo.github.io/js/motion.js" defer></script><script src="/Atl212_Hexo.github.io/js/sidebar.js" defer></script><script src="/Atl212_Hexo.github.io/js/next-boot.js" defer></script><script src="/Atl212_Hexo.github.io/js/pjax.js" defer></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
-<script src="/Atl212_Hexo.github.io/js/third-party/search/local-search.js" defer></script>
-
-
-
-
-  <script src="/Atl212_Hexo.github.io/js/third-party/fancybox.js" defer></script>
-
-  <script src="/Atl212_Hexo.github.io/js/third-party/pace.js" defer></script>
-
-
-  
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/Atl212_Hexo.github.io/js/third-party/math/mathjax.js" defer></script>
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/Atl212_Hexo.github.io/css/noscript.css">
-  </noscript>
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/Atl212_Hexo.github.io/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">Atl212</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">A Personal Website.</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Atl212_Hexo.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/Atl212_Hexo.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/Atl212_Hexo.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/Atl212_Hexo.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/Atl212_Hexo.github.io/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</header>
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/Atl212_Hexo.github.io/',
+  algolia: undefined,
+  localSearch: {"path":"/Atl212_Hexo.github.io/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Atl212',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png" onerror="this.onerror=null;this.src='/Atl212_Hexo.github.io/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/Atl212_Hexo.github.io/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/Atl212_Hexo.github.io/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/Atl212_Hexo.github.io/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/Atl212_Hexo.github.io/img/header-background-02.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/Atl212_Hexo.github.io/"><span class="site-name">Atl212</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Atl212</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Atl212" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://www.youtube.com/@YumeTsukii" target="_blank" title="'#24292e'"><i class="fab fa-youtube"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Atl212_Hexo.github.io/posts/2fb41cbd/" title="部署网站关键">部署网站关键</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-08T08:06:49.000Z" title="发表于 2025-05-08 17:06:49">2025-05-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Atl212_Hexo.github.io/categories/tmp/">tmp</a></span></div><div class="content">一个就是，这个 Github Action 的 deploy 配置脚本里面，其实也并不需要这个什么 hexo 部署的代码。 12345- name: Generate static pages  run: |    hexo clean    hexo generate --debug  working-directory: Blog  这两个的意思我认为是在服务上面把你的 public 的下的代码给清空，然后再部署一遍。 但这样搞就会有点问题，因为从 git 中 pull 或用 npm 安装的有些模块或插件啥的，并不是所有都会被上传到仓库下面。 当然，具体可能可以看 gitignore 脚本，看看有哪些是被你忽视，不需要上传到仓库上面的。    但是我目前也搞不懂，似乎有些插件或者是文件，如果已经被上传到仓库上，似乎就不受这个 gitignore 给影响了？ 所以虽然好像你确实有一部分 gitignore 里面是不会上传的，但是可能又还是有一部分会上传的。 所以如果你不是用你在本地已经部署好的 public 的静态文件的话，那么你 push 到仓库上面再 clean 又...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Atl212_Hexo.github.io/posts/11178/" title="应试所学到的东西跟实际应用中的差异">应试所学到的东西跟实际应用中的差异</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-24T07:57:35.000Z" title="发表于 2025-04-24 16:57:35">2025-04-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Atl212_Hexo.github.io/categories/tmp/">tmp</a></span></div><div class="content"> </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Atl212_Hexo.github.io/posts/49092/" title="他人的经历与行动细节的感受">他人的经历与行动细节的感受</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-24T07:56:59.000Z" title="发表于 2025-04-24 16:56:59">2025-04-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Atl212_Hexo.github.io/categories/tmp/">tmp</a></span></div><div class="content">   有些时候就比较讨厌看到一些抽象的卖惨一样的描述。 例如起床然后，又有什么郁郁症之类，但最终克服了一切困难，最后获得成功之类云云的描述。 我一直以来都不喜欢看到这样的表达，与之相反，我更喜欢看到一些更细致且具体的东西。 例如前段时间又看到一个niko的比赛画面，当时在面对一局比赛输掉的时候，他所抱怨的不是队友，而是去自责自己没能做到更好。 你通过视频中传递出来的神情，那些细节，甚至是整个情节的过程，你能够更加对所谓的某个，胜负心等抽象的概念有一个更加具体的认识。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Atl212_Hexo.github.io/posts/62980/" title="Github Action">Github Action</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-24T03:54:23.000Z" title="发表于 2025-04-24 12:54:23">2025-04-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Atl212_Hexo.github.io/categories/Github/">Github</a></span></div><div class="content">   前言前几天试着搭了hexo博客，本来部署直接用 hexo d 命令进行的部署。 但是自己更习惯用 github desktop。可以自定义 commit 的名称，也可以更直观看到文件的修改情况，所以试着用 github action 部署博客。 由于本人没怎么用过 action 部署，同时对于 git 拉取下来的一些文件设置也有认识不足，在此记录下部署过程遇到的几个问题。 hexo generate –debug yaml文件路径配置问题尝试构建但出现 Permission denied部署成功但index.html文件大小为0</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Atl212_Hexo.github.io/posts/26314/" title="《白话机器学习的数学》正则化实现代码">《白话机器学习的数学》正则化实现代码</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-10-18T00:05:07.000Z" title="发表于 2021-10-18 09:05:07">2021-10-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Atl212_Hexo.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="content">实现代码：    123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121import numpy as npimport matplotlib.pyplot as plt # 真正的函数def g(x):    return 0.1 * (x ** 3 + x ** 2 + x) # 随意准备一些向真正的函数加入了一点噪声的训练数据train_x = np.linspace (-2,2,8)train_y =g(train_x)+ np.random.randn(train_x.size) * 0.05 # 绘图确认x =...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Atl212_Hexo.github.io/posts/23601/" title="某类幂函数不定积分的步骤">某类幂函数不定积分的步骤</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-19T01:22:37.000Z" title="发表于 2021-01-19 10:22:37">2021-01-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Atl212_Hexo.github.io/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="content">$$\int x^{α}dx &#x3D; \int \frac{x^{α+1}}{α+1}+c(α\neq-1)$$ 我们知道幂函数的不定积分公式一般都可以表示为这个式子（除了指数等于-1），但是如果每次都按照式子的步骤来写就会感到麻烦。 当α是整数时候还好，如果α是”分数”或者是”负数”或者是”负数的分数”时候，因为分母的系数是在下方所以要除了算出来外，最后还要倒过来。 特别是负数的分数如 -（1 &#x2F; 2）时，-（1 &#x2F; 2）+ 1 &#x3D; （1 &#x2F; 2）倒过来系数为2，本人在因为在运算中跳步错过几次，吃了亏。 那么有没有更简洁的方法，保证我们运算简单点并且保证准确性。    通过观察式子我们可以发现，幂函数的指数和系数是一样的，都是α + 1，不同在于系数要倒过来。所以运算时我们可以这样。 $$\int x^{α}dx \rightarrow x^{α+1} \rightarrow \frac{1}{α+1}x^{α+1}+c$$ 先写出指数加一得到的数，然后把得到的指数倒过来就变成了前面的系数。举例子： $$\int...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png" onerror="this.onerror=null;this.src='/Atl212_Hexo.github.io/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Atl212</div><div class="author-info-description">Just a software engineer website.</div><div class="site-data"><a href="/Atl212_Hexo.github.io/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/Atl212_Hexo.github.io/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/Atl212_Hexo.github.io/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Atl212" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://www.youtube.com/@YumeTsukii" target="_blank" title="'#24292e'"><i class="fab fa-youtube"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/2fb41cbd/" title="部署网站关键">部署网站关键</a><time datetime="2025-05-08T08:06:49.000Z" title="发表于 2025-05-08 17:06:49">2025-05-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/11178/" title="应试所学到的东西跟实际应用中的差异">应试所学到的东西跟实际应用中的差异</a><time datetime="2025-04-24T07:57:35.000Z" title="发表于 2025-04-24 16:57:35">2025-04-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/49092/" title="他人的经历与行动细节的感受">他人的经历与行动细节的感受</a><time datetime="2025-04-24T07:56:59.000Z" title="发表于 2025-04-24 16:56:59">2025-04-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/62980/" title="Github Action">Github Action</a><time datetime="2025-04-24T03:54:23.000Z" title="发表于 2025-04-24 12:54:23">2025-04-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/26314/" title="《白话机器学习的数学》正则化实现代码">《白话机器学习的数学》正则化实现代码</a><time datetime="2021-10-18T00:05:07.000Z" title="发表于 2021-10-18 09:05:07">2021-10-18</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/Atl212_Hexo.github.io/categories/Github/"><span class="card-category-list-name">Github</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Atl212_Hexo.github.io/categories/tmp/"><span class="card-category-list-name">tmp</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Atl212_Hexo.github.io/categories/%E6%95%B0%E5%AD%A6/"><span class="card-category-list-name">数学</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Atl212_Hexo.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/Atl212_Hexo.github.io/tags/Github/" style="font-size: 1.1em; color: #999">Github</a> <a href="/Atl212_Hexo.github.io/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 1.1em; color: #999">代码</a> <a href="/Atl212_Hexo.github.io/tags/%E8%B7%AF%E5%BE%84/" style="font-size: 1.1em; color: #999">路径</a> <a href="/Atl212_Hexo.github.io/tags/Python/" style="font-size: 1.1em; color: #999">Python</a> <a href="/Atl212_Hexo.github.io/tags/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/" style="font-size: 1.1em; color: #999">不定积分</a> <a href="/Atl212_Hexo.github.io/tags/%E6%AD%A3%E5%88%99%E5%8C%96/" style="font-size: 1.1em; color: #999">正则化</a> <a href="/Atl212_Hexo.github.io/tags/tmp/" style="font-size: 1.5em; color: #99a9bf">tmp</a> <a href="/Atl212_Hexo.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">机器学习</a> <a href="/Atl212_Hexo.github.io/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 1.1em; color: #999">部署</a> <a href="/Atl212_Hexo.github.io/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 1.1em; color: #999">高等数学</a> <a href="/Atl212_Hexo.github.io/tags/Action/" style="font-size: 1.1em; color: #999">Action</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/Atl212_Hexo.github.io/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
         </li>
-        <li class="sidebar-nav-overview">
-          站点概览
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/Atl212_Hexo.github.io/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
         </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Atl212"
-      src="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-  <p class="site-author-name" itemprop="name">Atl212</p>
-  <div class="site-description" itemprop="description">Just a software engineer website.</div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/Atl212_Hexo.github.io/archives/">
-          <span class="site-state-item-count">6</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/Atl212_Hexo.github.io/categories/">
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/Atl212_Hexo.github.io/tags/">
-        <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author animated">
-      <span class="links-of-author-item">
-        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0F0bDIxMg==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Atl212"><i class="fab fa-github fa-fw"></i></span>
-      </span>
-      <span class="links-of-author-item">
-        <span class="exturl" data-url="aHR0cHM6Ly93d3cueW91dHViZS5jb20vQFl1bWVUc3VraWk=" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;@YumeTsukii"><i class="fab fa-youtube fa-fw"></i></span>
-      </span>
-  </div>
-
-        </div>
-      </div>
-    </div>
-
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.atl212.com/Atl212_Hexo.github.io/posts/2fb41cbd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-      <meta itemprop="name" content="Atl212">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Atl212">
-      <meta itemprop="description" content="Just a software engineer website.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Atl212">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Atl212_Hexo.github.io/posts/2fb41cbd/" class="post-title-link" itemprop="url">部署网站关键</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
       
-
-      <time title="创建时间：2025-05-08 17:06:49 / 修改时间：17:22:20" itemprop="dateCreated datePublished" datetime="2025-05-08T17:06:49+09:00">2025-05-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Atl212_Hexo.github.io/categories/tmp/" itemprop="url" rel="index"><span itemprop="name">tmp</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span> 
-
-<p>我服了，我不晓得为什么有些其他文章会按照奇奇怪怪的方式去部署网站，</p>
-<p>但我感觉我能够晓得的就是，这帮人多多少少可能并没有搞懂这个网站部署的前前后后的一些指令或代码到底是干什么的。</p>
-<p>但总之，先抄了跑了再说，反正有个所谓网站也是足够的了，也就不管了。</p>
-<p>至于是否会有什么问题，又是否会出现些不知道的错误，那么就交给后人的，或者是其他人的智慧了。</p>
-<p>一个就是，这个 Github Action 的 deploy 配置脚本里面，其实也并不需要这个什么 hexo 部署的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- name: Generate static pages</span><br><span class="line">  run: |</span><br><span class="line">    hexo clean</span><br><span class="line">    hexo generate --debug</span><br><span class="line">  working-directory: Blog</span><br></pre></td></tr></table></figure>
-
-<p>这两个的意思我认为是在服务上面把你的 public 的下的代码给清空，然后再部署一遍。</p>
-<p>但这样搞就会有点问题，因为从 git 中 pull 或用 npm 安装的有些模块或插件啥的，并不是所有都会被上传到仓库下面。</p>
-<p>当然，具体可能可以看 gitignore 脚本，看看有哪些是被你忽视，不需要上传到仓库上面的。</p>
-<p>但是我目前也搞不懂，似乎有些插件或者是文件，如果已经被上传到仓库上，似乎就不受这个 gitignore 给影响了？</p>
-<p>所以虽然好像你确实有一部分 gitignore 里面是不会上传的，但是可能又还是有一部分会上传的。</p>
-<p>所以如果你不是用你在本地已经部署好的 public 的静态文件的话，那么你 push 到仓库上面再 clean 又 generate 一次的话。</p>
-<p>就会导致你不晓得什么东西是 push 到了仓库上，又有什么是没有 push 上去，从而最终在服务器上 generate 生成的静态文件可能是缺失，或者是跟你本地部署的不一致的。</p>
-<p>所以搞了这么一圈，虽然我不晓得为什么其他有些人在 deploy.yaml 里面还要再重新生成一边，可能他们直接把全部node_modules都直接上传到仓库上了，所以也不在乎？</p>
-<p>反正我就直接把 gitignore 中的 &#x2F;public 给删掉了，省的又在服务器上重新生成一次。</p>
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/Atl212_Hexo.github.io/archives/2021/10/">
+            <span class="card-archive-list-date">
+              十月 2021
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/Atl212_Hexo.github.io/archives/2021/01/">
+            <span class="card-archive-list-date">
+              一月 2021
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.atl212.com/Atl212_Hexo.github.io/posts/11178/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-      <meta itemprop="name" content="Atl212">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Atl212">
-      <meta itemprop="description" content="Just a software engineer website.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Atl212">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Atl212_Hexo.github.io/posts/11178/" class="post-title-link" itemprop="url">应试所学到的东西跟实际应用中的差异</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-04-24 16:57:35" itemprop="dateCreated datePublished" datetime="2025-04-24T16:57:35+09:00">2025-04-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-07 14:41:41" itemprop="dateModified" datetime="2025-05-07T14:41:41+09:00">2025-05-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Atl212_Hexo.github.io/categories/tmp/" itemprop="url" rel="index"><span itemprop="name">tmp</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span> 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.atl212.com/Atl212_Hexo.github.io/posts/49092/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-      <meta itemprop="name" content="Atl212">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Atl212">
-      <meta itemprop="description" content="Just a software engineer website.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Atl212">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Atl212_Hexo.github.io/posts/49092/" class="post-title-link" itemprop="url">他人的经历与行动细节的感受</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-04-24 16:56:59" itemprop="dateCreated datePublished" datetime="2025-04-24T16:56:59+09:00">2025-04-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-07 14:41:41" itemprop="dateModified" datetime="2025-05-07T14:41:41+09:00">2025-05-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Atl212_Hexo.github.io/categories/tmp/" itemprop="url" rel="index"><span itemprop="name">tmp</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span> 
-
-<p>有些时候就比较讨厌看到一些抽象的卖惨一样的描述。</p>
-<p>例如起床然后，又有什么郁郁症之类，但最终克服了一切困难，最后获得成功之类云云的描述。</p>
-<p>我一直以来都不喜欢看到这样的表达，与之相反，我更喜欢看到一些更细致且具体的东西。</p>
-<p>例如前段时间又看到一个niko的比赛画面，当时在面对一局比赛输掉的时候，他所抱怨的不是队友，而是去自责自己没能做到更好。</p>
-<p>你通过视频中传递出来的神情，那些细节，甚至是整个情节的过程，你能够更加对所谓的某个，胜负心等抽象的概念有一个更加具体的认识。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.atl212.com/Atl212_Hexo.github.io/posts/62980/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-      <meta itemprop="name" content="Atl212">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Atl212">
-      <meta itemprop="description" content="Just a software engineer website.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Atl212">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Atl212_Hexo.github.io/posts/62980/" class="post-title-link" itemprop="url">Github Action</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-04-24 12:54:23" itemprop="dateCreated datePublished" datetime="2025-04-24T12:54:23+09:00">2025-04-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-07 14:41:41" itemprop="dateModified" datetime="2025-05-07T14:41:41+09:00">2025-05-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Atl212_Hexo.github.io/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span> 
-
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天试着搭了hexo博客，本来部署直接用 hexo d 命令进行的部署。</p>
-<p>但是自己更习惯用 github desktop。可以自定义 commit 的名称，也可以更直观看到文件的修改情况，所以试着用 github action 部署博客。</p>
-<p>由于本人没怎么用过 action 部署，同时对于 git 拉取下来的一些文件设置也有认识不足，在此记录下部署过程遇到的几个问题。</p>
-<p>hexo generate –debug</p>
-<h2 id="yaml文件路径配置问题"><a href="#yaml文件路径配置问题" class="headerlink" title="yaml文件路径配置问题"></a>yaml文件路径配置问题</h2><h2 id="尝试构建但出现-Permission-denied"><a href="#尝试构建但出现-Permission-denied" class="headerlink" title="尝试构建但出现 Permission denied"></a>尝试构建但出现 Permission denied</h2><h2 id="部署成功但index-html文件大小为0"><a href="#部署成功但index-html文件大小为0" class="headerlink" title="部署成功但index.html文件大小为0"></a>部署成功但index.html文件大小为0</h2>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.atl212.com/Atl212_Hexo.github.io/posts/26314/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-      <meta itemprop="name" content="Atl212">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Atl212">
-      <meta itemprop="description" content="Just a software engineer website.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Atl212">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Atl212_Hexo.github.io/posts/26314/" class="post-title-link" itemprop="url">《白话机器学习的数学》正则化实现代码</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-10-18 09:05:07" itemprop="dateCreated datePublished" datetime="2021-10-18T09:05:07+09:00">2021-10-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-07 14:41:41" itemprop="dateModified" datetime="2025-05-07T14:41:41+09:00">2025-05-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Atl212_Hexo.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>实现代码：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Atl212_Hexo.github.io/posts/26314/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.atl212.com/Atl212_Hexo.github.io/posts/23601/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Atl212_Hexo.github.io/images/bonfire-Icon-transparency.png">
-      <meta itemprop="name" content="Atl212">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Atl212">
-      <meta itemprop="description" content="Just a software engineer website.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Atl212">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Atl212_Hexo.github.io/posts/23601/" class="post-title-link" itemprop="url">某类幂函数不定积分的步骤</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-01-19 10:22:37" itemprop="dateCreated datePublished" datetime="2021-01-19T10:22:37+09:00">2021-01-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-07 14:41:41" itemprop="dateModified" datetime="2025-05-07T14:41:41+09:00">2025-05-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Atl212_Hexo.github.io/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>$$<br>\int x^{α}dx &#x3D; \int \frac{x^{α+1}}{α+1}+c(α\neq-1)<br>$$</p>
-<p>我们知道幂函数的不定积分公式一般都可以表示为这个式子（除了指数等于-1），但是如果每次都按照式子的步骤来写就会感到麻烦。</p>
-<p>当α是整数时候还好，如果α是”分数”或者是”负数”或者是”负数的分数”时候，因为分母的系数是在下方所以要除了算出来外，最后还要倒过来。</p>
-<p>特别是负数的分数如 -（1 &#x2F; 2）时，-（1 &#x2F; 2）+ 1 &#x3D; （1 &#x2F; 2）倒过来系数为2，本人在因为在运算中跳步错过几次，吃了亏。</p>
-<p>那么有没有更简洁的方法，保证我们运算简单点并且保证准确性。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Atl212_Hexo.github.io/posts/23601/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2025</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Atl212</span>
-  </div>
-  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9taXN0Lw==">NexT.Mist</span> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-
-<script>
-var options = {
-  bottom: '64px',
-  right: 'unset',
-  left: '32px',
-  time: '0.5s',
-  mixColor: 'transparent',
-  backgroundColor: 'transparent',
-  buttonColorDark: '#100f2c',
-  buttonColorLight: '#fff',
-  saveInCookies: false,
-  label: '🌓',
-  autoMatchOsTheme: false
-}
-const darkmode = new Darkmode(options);
-window.darkmode = darkmode;
-
-// 控制是否显示按钮
-
-if (window.darkmode && !window.darkmode.isActivated()) {
-  window.darkmode.toggle();
-  
-  var toggleButtons = document.getElementsByClassName("darkmode-toggle");
-
-  if (toggleButtons && toggleButtons.length > 0) {
-    for (let i = 0; i < toggleButtons.length; i++) {
-      toggleButtons[i].classList.add("darkmode-toggle--white");
+    </ul>
+  </div></div></div></main><footer id="footer" style="background: black;"><div id="footer-wrap"><div class="copyright">&copy;2025 By Atl212</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Atl212_Hexo.github.io/js/utils.js"></script><script src="/Atl212_Hexo.github.io/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["Software Engineer","ソフトウェア エンジニア"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
     }
   }
 }
-</script>
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["Software Engineer","ソフトウェア エンジニア"])
+}
+typedJSFn.run(subtitleType)</script></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
 
-</body>
-</html>
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false 
+        ? (usePjax ? pjax.loadUrl('/Atl212_Hexo.github.io/404.html') : window.location.href = '/Atl212_Hexo.github.io/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/Atl212_Hexo.github.io/js/search/local-search.js"></script></div></div></body></html>

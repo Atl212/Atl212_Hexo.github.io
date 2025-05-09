@@ -82,9 +82,30 @@
       </tags>
   </entry>
   <entry>
-    <title>应试所学到的东西跟实际应用中的差异</title>
-    <url>/Atl212_Hexo.github.io/posts/11178/</url>
-    <content><![CDATA[<span id="more"></span> ]]></content>
+    <title>部署网站关键</title>
+    <url>/Atl212_Hexo.github.io/posts/2fb41cbd/</url>
+    <content><![CDATA[<p>一个就是，这个 Github Action 的 deploy 配置脚本里面，其实也并不需要这个什么 hexo 部署的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- name: Generate static pages</span><br><span class="line">  run: |</span><br><span class="line">    hexo clean</span><br><span class="line">    hexo generate --debug</span><br><span class="line">  working-directory: Blog</span><br></pre></td></tr></table></figure>
+
+<p>这两个的意思我认为是在服务上面把你的 public 的下的代码给清空，然后再部署一遍。</p>
+<p>但这样搞就会有点问题，因为从 git 中 pull 或用 npm 安装的有些模块或插件啥的，并不是所有都会被上传到仓库下面。</p>
+<p>当然，具体可能可以看 gitignore 脚本，看看有哪些是被你忽视，不需要上传到仓库上面的。</p>
+<span id="more"></span> 
+
+<p>但是我目前也搞不懂，似乎有些插件或者是文件，如果已经被上传到仓库上，似乎就不受这个 gitignore 给影响了？</p>
+<p>所以虽然好像你确实有一部分 gitignore 里面是不会上传的，但是可能又还是有一部分会上传的。</p>
+<p>所以如果你不是用你在本地已经部署好的 public 的静态文件的话，那么你 push 到仓库上面再 clean 又 generate 一次的话。</p>
+<p>就会导致你不晓得什么东西是 push 到了仓库上，又有什么是没有 push 上去，从而最终在服务器上 generate 生成的静态文件可能是缺失，或者是跟你本地部署的不一致的。</p>
+<p>比如说网上有些说为什么 next 主题没有上传到仓库上面导致 public 生成的 index.html 为空。</p>
+<p>或者比如刚才我被折磨了几个小时，也搞不明白为什么本地部署的 hexo-next-darkmode 的 html 代码跟上传到服务器再重新生成的不一样。</p>
+<p>所以搞了这么一圈，虽然我不晓得为什么其他有些人在 deploy.yaml 里面还要再重新生成一边，可能他们直接把全部 node_modules 都直接上传到仓库上了，所以也不在乎？</p>
+<p>但是我看了看，这如果要把全部插件和模块都得推送到仓库上面，好说好歹也有50多mb，而且你也晓不得除了这个 node_modules 外有是不是还会有其他路径的文件还会影响到 public 静态文件的生成的。</p>
+<p>反正我就直接把 gitignore 中的 &#x2F;public 给删掉了，省的又在服务器上重新生成一次。</p>
+<p>我也不晓得为什么有些其他文章会按照奇奇怪怪的方式去部署网站，</p>
+<p>但我感觉我能够晓得的就是，这帮人多多少少可能并没有搞懂这个网站部署的前前后后的一些指令或代码到底是干什么的。</p>
+<p>但总之，先抄了跑了再说，反正有个所谓网站也是足够的了，也就不管了。</p>
+<p>至于是否会有什么问题，又是否会出现些不知道的错误，那么就交给后人的，或者是其他人的智慧了。</p>
+]]></content>
       <categories>
         <category>tmp</category>
       </categories>
@@ -93,27 +114,9 @@
       </tags>
   </entry>
   <entry>
-    <title>部署网站关键</title>
-    <url>/Atl212_Hexo.github.io/posts/2fb41cbd/</url>
-    <content><![CDATA[<span id="more"></span> 
-
-<p>我服了，我不晓得为什么有些其他文章会按照奇奇怪怪的方式去部署网站，</p>
-<p>但我感觉我能够晓得的就是，这帮人多多少少可能并没有搞懂这个网站部署的前前后后的一些指令或代码到底是干什么的。</p>
-<p>但总之，先抄了跑了再说，反正有个所谓网站也是足够的了，也就不管了。</p>
-<p>至于是否会有什么问题，又是否会出现些不知道的错误，那么就交给后人的，或者是其他人的智慧了。</p>
-<p>一个就是，这个 Github Action 的 deploy 配置脚本里面，其实也并不需要这个什么 hexo 部署的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- name: Generate static pages</span><br><span class="line">  run: |</span><br><span class="line">    hexo clean</span><br><span class="line">    hexo generate --debug</span><br><span class="line">  working-directory: Blog</span><br></pre></td></tr></table></figure>
-
-<p>这两个的意思我认为是在服务上面把你的 public 的下的代码给清空，然后再部署一遍。</p>
-<p>但这样搞就会有点问题，因为从 git 中 pull 或用 npm 安装的有些模块或插件啥的，并不是所有都会被上传到仓库下面。</p>
-<p>当然，具体可能可以看 gitignore 脚本，看看有哪些是被你忽视，不需要上传到仓库上面的。</p>
-<p>但是我目前也搞不懂，似乎有些插件或者是文件，如果已经被上传到仓库上，似乎就不受这个 gitignore 给影响了？</p>
-<p>所以虽然好像你确实有一部分 gitignore 里面是不会上传的，但是可能又还是有一部分会上传的。</p>
-<p>所以如果你不是用你在本地已经部署好的 public 的静态文件的话，那么你 push 到仓库上面再 clean 又 generate 一次的话。</p>
-<p>就会导致你不晓得什么东西是 push 到了仓库上，又有什么是没有 push 上去，从而最终在服务器上 generate 生成的静态文件可能是缺失，或者是跟你本地部署的不一致的。</p>
-<p>所以搞了这么一圈，虽然我不晓得为什么其他有些人在 deploy.yaml 里面还要再重新生成一边，可能他们直接把全部node_modules都直接上传到仓库上了，所以也不在乎？</p>
-<p>反正我就直接把 gitignore 中的 &#x2F;public 给删掉了，省的又在服务器上重新生成一次。</p>
-]]></content>
+    <title>应试所学到的东西跟实际应用中的差异</title>
+    <url>/Atl212_Hexo.github.io/posts/11178/</url>
+    <content><![CDATA[<span id="more"></span> ]]></content>
       <categories>
         <category>tmp</category>
       </categories>
