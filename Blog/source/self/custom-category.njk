@@ -1,0 +1,52 @@
+{# {% extends '_layout.njk' %}
+{% import '_macro/sidebar.njk' as sidebar_template with context %}
+
+{% macro renderCategory(category) %}
+    <li style="display: inline; margin-right: 15px;">
+        <a href="#{{ category.name }}">{{ category.name }} <span>[{{ category.directly_posts_length }}]</span></a>
+    </li>
+{% endmacro %}
+
+{% macro renderPosts(category) %}
+    <h4 class="archive-ul show" onclick="toggleCategory('{{ category.name }}', this)">
+        <span class="triangle-right"></span>
+        {{ category.name }}
+    </h4>
+    <ul id="{{ category.name }}" class="category-content">
+        {% for post in category.posts %}
+            <li class="listing-category"><a href="{{ url_for(post.path) }}">{{ post.title }}</a></li>
+        {% endfor %}
+        {% if category.children.length %}
+            <ul>
+                {% for child in category.children %}
+                    {{ renderPosts(child) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </ul>
+{% endmacro %}
+
+{% block content %}
+    <div class="button-container">
+        <button onclick="toggleAll(true)">展开全部</button>
+        <button onclick="toggleAll(false)">收起全部</button>
+    </div>
+
+    <div class="widget">
+        <ul class="tag_box inline list-unstyled">
+        {% for category in page.categoriesTree %}
+            {{ renderCategory(category) }}
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="archive">
+        {% for category in page.categoriesTree %}
+            {{ renderPosts(category) }}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+{{ sidebar_template.render(false) }}
+{% endblock %} #}

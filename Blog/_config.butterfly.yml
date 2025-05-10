@@ -268,7 +268,7 @@ footer:
   owner:
     enable: true
     since: 2025
-  custom_text:
+  custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
   # Copyright of theme and framework
   copyright: true
 
@@ -533,7 +533,7 @@ comments:
   # Format of two comments system : Disqus,Waline
   use:
   # Display the comment name next to the button
-  text: true
+  text: false
   # Lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
   lazyload: false
@@ -1043,6 +1043,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/Atl212_Hexo.github.io/self/atom-one-dark.css">
   bottom:
     # - <script src="xxxx"></script>
 
