@@ -44,26 +44,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github Action</title>
-    <url>/Atl212_Hexo.github.io/posts/62980/</url>
-    <content><![CDATA[<span id="more"></span> 
-
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天试着搭了hexo博客，本来部署直接用 hexo d 命令进行的部署。</p>
-<p>但是自己更习惯用 github desktop。可以自定义 commit 的名称，也可以更直观看到文件的修改情况，所以试着用 github action 部署博客。</p>
-<p>由于本人没怎么用过 action 部署，同时对于 git 拉取下来的一些文件设置也有认识不足，在此记录下部署过程遇到的几个问题。</p>
-<p>hexo generate –debug</p>
-<h2 id="yaml文件路径配置问题"><a href="#yaml文件路径配置问题" class="headerlink" title="yaml文件路径配置问题"></a>yaml文件路径配置问题</h2><h2 id="尝试构建但出现-Permission-denied"><a href="#尝试构建但出现-Permission-denied" class="headerlink" title="尝试构建但出现 Permission denied"></a>尝试构建但出现 Permission denied</h2><h2 id="部署成功但index-html文件大小为0"><a href="#部署成功但index-html文件大小为0" class="headerlink" title="部署成功但index.html文件大小为0"></a>部署成功但index.html文件大小为0</h2>]]></content>
-      <categories>
-        <category>Github</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>Action</tag>
-        <tag>部署</tag>
-        <tag>路径</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>部署网站关键</title>
     <url>/Atl212_Hexo.github.io/posts/2fb41cbd/</url>
     <content><![CDATA[<p>一个就是，这个 Github Action 的 deploy 配置脚本里面，其实也并不需要这个什么 hexo 部署的代码。</p>
@@ -93,6 +73,26 @@
       </categories>
       <tags>
         <tag>tmp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github Action</title>
+    <url>/Atl212_Hexo.github.io/posts/62980/</url>
+    <content><![CDATA[<span id="more"></span> 
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天试着搭了hexo博客，本来部署直接用 hexo d 命令进行的部署。</p>
+<p>但是自己更习惯用 github desktop。可以自定义 commit 的名称，也可以更直观看到文件的修改情况，所以试着用 github action 部署博客。</p>
+<p>由于本人没怎么用过 action 部署，同时对于 git 拉取下来的一些文件设置也有认识不足，在此记录下部署过程遇到的几个问题。</p>
+<p>hexo generate –debug</p>
+<h2 id="yaml文件路径配置问题"><a href="#yaml文件路径配置问题" class="headerlink" title="yaml文件路径配置问题"></a>yaml文件路径配置问题</h2><h2 id="尝试构建但出现-Permission-denied"><a href="#尝试构建但出现-Permission-denied" class="headerlink" title="尝试构建但出现 Permission denied"></a>尝试构建但出现 Permission denied</h2><h2 id="部署成功但index-html文件大小为0"><a href="#部署成功但index-html文件大小为0" class="headerlink" title="部署成功但index.html文件大小为0"></a>部署成功但index.html文件大小为0</h2>]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Action</tag>
+        <tag>部署</tag>
+        <tag>路径</tag>
       </tags>
   </entry>
 </search>
