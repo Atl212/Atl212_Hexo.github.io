@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>《白话机器学习的数学》正则化实现代码</title>
-    <url>/Atl212_Hexo.github.io/posts/26314/</url>
-    <content><![CDATA[<p>实现代码：</p>
-<span id="more"></span> 
-
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br> <br><span class="hljs-comment"># 真正的函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">g</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0.1</span> * (x ** <span class="hljs-number">3</span> + x ** <span class="hljs-number">2</span> + x)<br> <br><span class="hljs-comment"># 随意准备一些向真正的函数加入了一点噪声的训练数据</span><br>train_x = np.linspace (-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">8</span>)<br>train_y =g(train_x)+ np.random.randn(train_x.size) * <span class="hljs-number">0.05</span><br> <br><span class="hljs-comment"># 绘图确认</span><br>x = np.linspace(-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">100</span>)<br>plt.plot(train_x, train_y, <span class="hljs-string">&#x27;o&#x27;</span>)<br>plt.plot(x, g(x), linestyle = <span class="hljs-string">&#x27;dashed&#x27;</span>)<br>plt.ylim(-<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br>plt.show()<br> <br><span class="hljs-comment">##########</span><br> <br><span class="hljs-comment"># 标准化</span><br>mu = train_x.mean ()<br>sigma = train_x.std()<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">standardize</span> (x):<br>    <span class="hljs-keyword">return</span> (x - mu)/ sigma<br> <br>train_z = standardize(train_x)<br> <br><span class="hljs-comment"># 创建训练数据的矩阵</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">to_matrix</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">return</span> np.vstack([ <br>        np.ones(x.size),<br>        x,    <br>        x ** <span class="hljs-number">2</span>,<br>        x ** <span class="hljs-number">3</span>,<br>        x ** <span class="hljs-number">4</span>,<br>        x ** <span class="hljs-number">5</span>,<br>        x ** <span class="hljs-number">6</span>,<br>        x ** <span class="hljs-number">7</span>,                                           <br>        x ** <span class="hljs-number">8</span>,<br>        x ** <span class="hljs-number">9</span>, <br>        x ** <span class="hljs-number">10</span>,<br>        ]).T <br> <br>X = to_matrix(train_z)<br> <br><span class="hljs-comment">#参数初始化</span><br>theta= np.random.randn(X.shape[<span class="hljs-number">1</span>])<br> <br><span class="hljs-comment"># 预测函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span> (x):<br>    <span class="hljs-keyword">return</span> np.dot (x,theta)<br> <br><span class="hljs-comment">##########</span><br> <br><span class="hljs-comment"># 目标函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">E</span>(<span class="hljs-params">x, y</span>):<br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0.5</span> * np.<span class="hljs-built_in">sum</span>((y - f(x)) ** <span class="hljs-number">2</span>)<br> <br><span class="hljs-comment"># 学习率</span><br>ETA = <span class="hljs-number">1e-4</span><br> <br><span class="hljs-comment"># 误差</span><br>diff = <span class="hljs-number">1</span><br><span class="hljs-comment"># 重复学习</span><br>error = E(X,train_y)<br><span class="hljs-keyword">while</span> diff &gt; <span class="hljs-number">1e-6</span>:<br>    theta= theta - ETA * np.dot(f(X) - train_y,X)<br>    current_error = E(X,train_y)<br>    diff = error - current_error<br>    error = current_error<br>    <br><span class="hljs-comment"># 对结果绘图</span><br>z = standardize(x)<br>plt.plot(train_z, train_y, <span class="hljs-string">&#x27;o&#x27;</span>)<br>plt.plot(z, f(to_matrix(z)))<br>plt.show()<br> <br><span class="hljs-comment">##########</span><br> <br><span class="hljs-comment"># 保存未正则化的参数，然后再次参数初始化</span><br>theta1 = theta<br>theta = np.random.randn(X.shape[<span class="hljs-number">1</span>])<br> <br><span class="hljs-comment"># 正则化常量</span><br>LAMBDA = <span class="hljs-number">1</span><br> <br><span class="hljs-comment">#误差</span><br>diff = <span class="hljs-number">1</span><br> <br><span class="hljs-comment">#重复学习（包含正则化项）</span><br>error = E(X, train_y)<br><span class="hljs-keyword">while</span> diff &gt; <span class="hljs-number">1e-6</span>:<br>    <span class="hljs-comment"># 正则化项。偏置项不适用正则化，所以为 0</span><br>    reg_term = LAMBDA * np.hstack([<span class="hljs-number">0</span>, theta[<span class="hljs-number">1</span>:]])<br>    <span class="hljs-comment"># 应用正则化项，更新参数</span><br>    theta = theta - ETA *(np.dot(f(X) - train_y,X)+ reg_term) <br>    current_error = E(X, train_y)<br>    diff = error - current_error<br>    error = current_error<br> <br><span class="hljs-comment"># 对结果绘图</span><br>plt.plot(train_z,train_y,<span class="hljs-string">&#x27;o&#x27;</span>)<br>plt.plot(z,f(to_matrix(z)))<br>plt.show()<br> <br><span class="hljs-comment">##########</span><br> <br><span class="hljs-comment"># 保存应用了正则化的参数</span><br>theta2 = theta<br> <br>plt.plot(train_z, train_y, <span class="hljs-string">&#x27;o&#x27;</span>)<br> <br><span class="hljs-comment"># 画出未应用正则化的结果</span><br>theta = theta1<br>plt.plot(z, f(to_matrix(z)), linestyle = <span class="hljs-string">&#x27;dashed&#x27;</span>)<br><span class="hljs-comment"># 画出应用了正则化的结果</span><br>theta = theta2<br>plt.plot(z, f(to_matrix(z)))<br> <br>plt.show()<br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>Python</tag>
-        <tag>正则化</tag>
-        <tag>代码</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>某类幂函数不定积分的步骤</title>
     <url>/Atl212_Hexo.github.io/posts/23601/</url>
     <content><![CDATA[<p>$$<br>\int x^{α}dx &#x3D; \int \frac{x^{α+1}}{α+1}+c(α\neq-1)<br>$$</p>
@@ -44,6 +26,24 @@
       </tags>
   </entry>
   <entry>
+    <title>《白话机器学习的数学》正则化实现代码</title>
+    <url>/Atl212_Hexo.github.io/posts/26314/</url>
+    <content><![CDATA[<p>实现代码：</p>
+<span id="more"></span> 
+
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br> <br><span class="hljs-comment"># 真正的函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">g</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0.1</span> * (x ** <span class="hljs-number">3</span> + x ** <span class="hljs-number">2</span> + x)<br> <br><span class="hljs-comment"># 随意准备一些向真正的函数加入了一点噪声的训练数据</span><br>train_x = np.linspace (-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">8</span>)<br>train_y =g(train_x)+ np.random.randn(train_x.size) * <span class="hljs-number">0.05</span><br> <br><span class="hljs-comment"># 绘图确认</span><br>x = np.linspace(-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">100</span>)<br>plt.plot(train_x, train_y, <span class="hljs-string">&#x27;o&#x27;</span>)<br>plt.plot(x, g(x), linestyle = <span class="hljs-string">&#x27;dashed&#x27;</span>)<br>plt.ylim(-<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br>plt.show()<br> <br><span class="hljs-comment">##########</span><br> <br><span class="hljs-comment"># 标准化</span><br>mu = train_x.mean ()<br>sigma = train_x.std()<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">standardize</span> (x):<br>    <span class="hljs-keyword">return</span> (x - mu)/ sigma<br> <br>train_z = standardize(train_x)<br> <br><span class="hljs-comment"># 创建训练数据的矩阵</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">to_matrix</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">return</span> np.vstack([ <br>        np.ones(x.size),<br>        x,    <br>        x ** <span class="hljs-number">2</span>,<br>        x ** <span class="hljs-number">3</span>,<br>        x ** <span class="hljs-number">4</span>,<br>        x ** <span class="hljs-number">5</span>,<br>        x ** <span class="hljs-number">6</span>,<br>        x ** <span class="hljs-number">7</span>,                                           <br>        x ** <span class="hljs-number">8</span>,<br>        x ** <span class="hljs-number">9</span>, <br>        x ** <span class="hljs-number">10</span>,<br>        ]).T <br> <br>X = to_matrix(train_z)<br> <br><span class="hljs-comment">#参数初始化</span><br>theta= np.random.randn(X.shape[<span class="hljs-number">1</span>])<br> <br><span class="hljs-comment"># 预测函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span> (x):<br>    <span class="hljs-keyword">return</span> np.dot (x,theta)<br> <br><span class="hljs-comment">##########</span><br> <br><span class="hljs-comment"># 目标函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">E</span>(<span class="hljs-params">x, y</span>):<br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0.5</span> * np.<span class="hljs-built_in">sum</span>((y - f(x)) ** <span class="hljs-number">2</span>)<br> <br><span class="hljs-comment"># 学习率</span><br>ETA = <span class="hljs-number">1e-4</span><br> <br><span class="hljs-comment"># 误差</span><br>diff = <span class="hljs-number">1</span><br><span class="hljs-comment"># 重复学习</span><br>error = E(X,train_y)<br><span class="hljs-keyword">while</span> diff &gt; <span class="hljs-number">1e-6</span>:<br>    theta= theta - ETA * np.dot(f(X) - train_y,X)<br>    current_error = E(X,train_y)<br>    diff = error - current_error<br>    error = current_error<br>    <br><span class="hljs-comment"># 对结果绘图</span><br>z = standardize(x)<br>plt.plot(train_z, train_y, <span class="hljs-string">&#x27;o&#x27;</span>)<br>plt.plot(z, f(to_matrix(z)))<br>plt.show()<br> <br><span class="hljs-comment">##########</span><br> <br><span class="hljs-comment"># 保存未正则化的参数，然后再次参数初始化</span><br>theta1 = theta<br>theta = np.random.randn(X.shape[<span class="hljs-number">1</span>])<br> <br><span class="hljs-comment"># 正则化常量</span><br>LAMBDA = <span class="hljs-number">1</span><br> <br><span class="hljs-comment">#误差</span><br>diff = <span class="hljs-number">1</span><br> <br><span class="hljs-comment">#重复学习（包含正则化项）</span><br>error = E(X, train_y)<br><span class="hljs-keyword">while</span> diff &gt; <span class="hljs-number">1e-6</span>:<br>    <span class="hljs-comment"># 正则化项。偏置项不适用正则化，所以为 0</span><br>    reg_term = LAMBDA * np.hstack([<span class="hljs-number">0</span>, theta[<span class="hljs-number">1</span>:]])<br>    <span class="hljs-comment"># 应用正则化项，更新参数</span><br>    theta = theta - ETA *(np.dot(f(X) - train_y,X)+ reg_term) <br>    current_error = E(X, train_y)<br>    diff = error - current_error<br>    error = current_error<br> <br><span class="hljs-comment"># 对结果绘图</span><br>plt.plot(train_z,train_y,<span class="hljs-string">&#x27;o&#x27;</span>)<br>plt.plot(z,f(to_matrix(z)))<br>plt.show()<br> <br><span class="hljs-comment">##########</span><br> <br><span class="hljs-comment"># 保存应用了正则化的参数</span><br>theta2 = theta<br> <br>plt.plot(train_z, train_y, <span class="hljs-string">&#x27;o&#x27;</span>)<br> <br><span class="hljs-comment"># 画出未应用正则化的结果</span><br>theta = theta1<br>plt.plot(z, f(to_matrix(z)), linestyle = <span class="hljs-string">&#x27;dashed&#x27;</span>)<br><span class="hljs-comment"># 画出应用了正则化的结果</span><br>theta = theta2<br>plt.plot(z, f(to_matrix(z)))<br> <br>plt.show()<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>正则化</tag>
+        <tag>代码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Github Action</title>
     <url>/Atl212_Hexo.github.io/posts/62980/</url>
     <content><![CDATA[<span id="more"></span> 
@@ -61,35 +61,6 @@
         <tag>Action</tag>
         <tag>部署</tag>
         <tag>路径</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>他人的经历与行动细节的感受</title>
-    <url>/Atl212_Hexo.github.io/posts/49092/</url>
-    <content><![CDATA[<span id="more"></span> 
-
-<p>有些时候就比较讨厌看到一些抽象的卖惨一样的描述。</p>
-<p>例如起床然后，又有什么郁郁症之类，但最终克服了一切困难，最后获得成功之类云云的描述。</p>
-<p>我一直以来都不喜欢看到这样的表达，与之相反，我更喜欢看到一些更细致且具体的东西。</p>
-<p>例如前段时间又看到一个niko的比赛画面，当时在面对一局比赛输掉的时候，他所抱怨的不是队友，而是去自责自己没能做到更好。</p>
-<p>你通过视频中传递出来的神情，那些细节，甚至是整个情节的过程，你能够更加对所谓的某个，胜负心等抽象的概念有一个更加具体的认识。</p>
-]]></content>
-      <categories>
-        <category>tmp</category>
-      </categories>
-      <tags>
-        <tag>tmp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>应试所学到的东西跟实际应用中的差异</title>
-    <url>/Atl212_Hexo.github.io/posts/11178/</url>
-    <content><![CDATA[<span id="more"></span> ]]></content>
-      <categories>
-        <category>tmp</category>
-      </categories>
-      <tags>
-        <tag>tmp</tag>
       </tags>
   </entry>
   <entry>

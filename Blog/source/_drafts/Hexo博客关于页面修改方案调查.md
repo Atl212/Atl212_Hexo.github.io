@@ -15,3 +15,11 @@ tags:
 一种是通过注入 inject 的方式，在主题文件夹下对目标文件的代码进行插入或覆盖。
 
 还有一种就是如果说所用主题下没有所需页面的 html 或 css 的渲染文件的话，得自己新建目标文件，自己编写。
+
+https://www.cnblogs.com/lmzq/p/17140535.html
+
+https://www.bioinfo-scrounger.com/about/
+
+https://www.bioinfo-scrounger.com/archives/hexo-about-customized/
+
+https://weakyon.com/2024/09/07/implementation-of-custom-categories-in-hexo.html
