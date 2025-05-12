@@ -23,3 +23,7 @@ https://www.bioinfo-scrounger.com/about/
 https://www.bioinfo-scrounger.com/archives/hexo-about-customized/
 
 https://weakyon.com/2024/09/07/implementation-of-custom-categories-in-hexo.html
+
+所以为了能够修改关于页面，且能够推送到自己的仓库上进行多设备同步，参考了以下文章，fork 了原 butterfly 主题，然后用 git submodule 来感知子模块。
+
+https://cloud.tencent.com/developer/article/2023057

@@ -74,7 +74,7 @@ disable_top_img: false
 default_top_img: false
 
 # The banner image of index page
-index_img: /Atl212_Hexo.github.io/img/header-background-02.png
+index_img: /img/header-background-02.png
 
 # The banner image of archive page
 archive_img:

@@ -1,0 +1,3 @@
+[submodule "Blog/themes/butterfly"]
+	path = Blog/themes/butterfly
+	url = git@github.com:Atl212/hexo-theme-butterfly.git
