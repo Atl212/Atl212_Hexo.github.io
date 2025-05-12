@@ -26,4 +26,18 @@ https://weakyon.com/2024/09/07/implementation-of-custom-categories-in-hexo.html
 
 所以为了能够修改关于页面，且能够推送到自己的仓库上进行多设备同步，参考了以下文章，fork 了原 butterfly 主题，然后用 git submodule 来感知子模块。
 
+主要的步骤我感觉主要是，fork 原 butterfly 主题，然后 clone 到本地博客路径下 /blog/themes/ 然后再 git bash 中输入以下命令
+
+```git
+git submodule add git@github.com:username/hexo-theme-butterfly.git themes/butterfly
+```
+
+![](スクリーンショット 2025-05-12 143541.png)
+
+username 可以自己 fork 后的仓库中在如图所示位置找到。
+
+然后在 vscode 中可以看到并修改两个仓库。
+
 https://cloud.tencent.com/developer/article/2023057
+
+https://blog.csdn.net/jack_kxc/article/details/139687045
