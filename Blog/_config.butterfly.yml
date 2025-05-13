@@ -981,8 +981,8 @@ pjax:
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: true
-  per_page: true
+  enable: false
+  per_page: false
 
 # Snackbar - Toast Notification
 # https://github.com/polonel/SnackBar
@@ -1044,8 +1044,24 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="stylesheet" href="/Atl212_Hexo.github.io/self/atom-one-dark.css">
+    - <link rel="stylesheet" href="/Atl212_Hexo.github.io/self/bootstrap.self.css">
+    # - <link rel="stylesheet" href="/Atl212_Hexo.github.io/self/dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    - <link rel="stylesheet" href="/Atl212_Hexo.github.io/self/dist/font-awesome-4.7.0/css/font-awesome.css">
+    - <link rel="stylesheet" href="/Atl212_Hexo.github.io/self/dist/simple-line-icons/css/simple-line-icons.css">
+    # - <link rel="stylesheet" href="/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/dist/viewer.css">
+    # - <link rel="stylesheet" href="/Atl212_Hexo.github.io/self/dist/aos/css/aos.css">
+
   bottom:
     # - <script src="xxxx"></script>
+    - <script src="/Atl212_Hexo.github.io/self/dist/jquery/jquery-3.7.1.min.js"></script>
+    - <script src="/Atl212_Hexo.github.io/self/dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    # - <script src="/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/dist/viewer.js"></script>
+    - <script src="/Atl212_Hexo.github.io/self/dist/aos/js/aos.js"></script>
+    # - <script src="/Atl212_Hexo.github.io/self/js/aos.js"></script>
+    # - <script src="/Atl212_Hexo.github.io/self/js/audio.js"></script>
+    # - <script src="/Atl212_Hexo.github.io/self/js/image-gallery.js"></script>
+    # - <script src="/Atl212_Hexo.github.io/self/js/scroll-to-location.js"></script>
+    - <script src="/Atl212_Hexo.github.io/self/js/caption-mouseListener.js"></script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work

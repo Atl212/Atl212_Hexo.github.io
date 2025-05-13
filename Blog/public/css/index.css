@@ -6233,6 +6233,554 @@ blockquote.pullquote.right {
 .read-mode .container .note .note-icon {
   color: var(--font-color);
 }
+/* @font-face {
+    font-family: 'Source Han Sans CN';
+    src: url('../../assets/fonts/Source-Han-Sans-CN-VF-Regular.otf');
+} */
+
+:root {
+    --hole-color-1: #000000;
+}
+
+body {
+    /* font-family: 'Source Han Sans CN'; */
+    background-color: var(--hole-color-1);
+}
+
+
+
+
+#musicButton {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: auto;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+
+.nav-space{
+    height: 80px;
+}
+
+/* ナビゲーションバー全体 */
+.navbar {
+    position: fixed;
+    width: 100%;
+    /* ナビゲーションバーを常に上部に置いてください */
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between; /* 左右の要素を配置 */
+    align-items: center; /* 垂直方向を中央揃え */
+    background-color: rgba(0, 0, 0, 0.5); /* 背景黒 */
+    padding: 0 100px;
+    border-bottom: 1px solid #333;
+    height: 60px; /* 固定高さ */
+    backdrop-filter: blur(60px) brightness(1); /* 背景模糊和亮度调整 */
+}
+
+/* Alt212 左上ロゴ */
+.navbar-left .top-nav {
+    font-weight : bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    background: none; /* 背景を消す */
+    border: none; /* ボーダーを消す */
+    margin-left: 20px; /* 各ボタンの間隔を調整 */
+    cursor: pointer; /* クリックできるマウスカーソル */
+}
+.navbar-left .top-nav:hover {
+    color: rgba(255, 255, 255, 0.5); /* ホバー時に少し透明に */
+}
+
+.navbar-right{
+    display: flex;
+    align-items: end;
+    float: right;
+}
+
+/* 右上のナビゲーションボタン */
+.navbar-right .nav {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: none; /* 背景を消す */
+    border: none; /* ボーダーを消す */
+    cursor: pointer; /* クリックできるマウスカーソル */
+    margin-left: 20px; /* 各ボタンの間隔を調整 */
+    border-bottom: 2px solid transparent; /* 初期状態でボーダーは透明 */
+}
+
+.navbar-right .nav:hover {
+    color: rgba(255, 255, 255, 0.7); /* テキスト色を薄く */
+}
+
+
+
+.masthead {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* 要素が両側に均等なスペースを取るよう */
+    /* justify-content: space-around;  */
+}
+
+.masthead-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.masthead-background {
+    background-image: url("../img/header_background_3_not_nosie.png");
+    background-repeat: no-repeat;
+    /* 画像が要素全体を覆うようにします */
+    background-size: cover;
+    z-index: 1;
+}
+
+.masthead-content {
+    position: relative;
+    margin-left: 150px;
+    z-index: 2;
+    color: white;
+    justify-content: flex-start; /* 左寄せ */
+}
+
+.text-space {
+    height: 100px;
+}
+
+.text-name {
+    margin-top: 50px;
+    font-weight : bold;
+    font-size : 80px;
+    letter-spacing : 1px;
+    margin-bottom: 0;
+    color : #FFFFFF;
+}
+
+.text-job {
+    font-weight : bold;
+    font-size : 40px;
+    letter-spacing : 0.5px;
+    color : #FFFFFF;
+}
+
+.masthead h1 {
+    font-size: 8rem;
+}
+
+.pixel-icon {
+    image-rendering: pixelated;
+}
+
+.masthead h3 {
+    font-size: 3rem;
+}
+
+/* Reduces the font size of the masthead text on smaller screens */
+
+@media (max-width: 800px) {
+    .masthead h1 {
+        font-size: 4rem;
+    }
+    .masthead h3 {
+        font-size: 2.5rem;
+    }
+    .masthead p {
+        font-size: 2.5rem;
+    }
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+
+.content-section {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+}
+
+.content-section-heading h2 {
+    font-weight : bold;
+    font-size : 36px;
+    letter-spacing : 0.36px;
+    color : #FFFFFF;
+    color : rgb(255, 255, 255);
+}
+
+
+@keyframes vertical-sinus {
+    to {
+        /* transform: translateY(-12px); */
+        /* CSS で transform を使用する際、複数のスタイルが同時に指定されると上書きされます。
+        そのため、@keyframes アニメーション内で transform を変更すると、初期設定で中央に配置するための transform: 
+        translateX(-50%); が無効化され、要素が右上に移動する挙動が発生している可能性があります。 */
+        transform: translateX(-50%) translateY(-12px);
+    }
+}
+
+.scroll-content{
+    width: 100vw; /* 画面の幅いっぱいにする */
+    position: fixed;
+    bottom: 24px;
+    margin-left: 150px;
+
+    z-index: 1000;
+}
+
+.scroll-content .icon-content{
+    width: 100vw; /* 画面の幅いっぱいにする */
+
+    display: flex;
+    gap: 20px;
+
+    transition: opacity 0.2s ease-out;
+}
+
+.scroll-content .icon-content .top-social-link .icon{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    transform: scale(0.5);
+}
+
+.scroll-content .icon-content .top-social-link .icon:hover{
+    transition: filter 0.3s ease;
+    filter: brightness(0.5);
+}
+
+#scroll-indicator {
+    --arrow-size: 6px;
+    --text-offset: 12px;
+    position: fixed;
+
+    background-image: url('../img/down-arrow-166376.png');
+    background-repeat: no-repeat;
+    background-size: var(--arrow-size) var(--arrow-size * 2);
+
+    text-align: center;
+    background-position-x: center;
+    background-position-y: var(--text-offset);
+
+    image-rendering: pixelated;
+    height: calc(var(--arrow-size) + var(--text-offset));
+    width: calc(var(--arrow-size) * 2);
+
+    animation: vertical-sinus 0.4s alternate infinite ease-in-out;
+    transition: opacity 0.2s ease-out;
+
+    /* 中央に配置するための設定 */
+    left: 50%; /* 親要素の幅の50% */
+    transform: translateX(-50%); /* 要素自身の幅の半分だけ左に移動 */
+}
+
+.history-item,
+.strength-table,
+.btn {
+    font-size: 1.25rem;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.strength-table td,
+.strength-table th {
+    border-color: rgb(0, 0, 0, 0.2);
+}
+
+.history-date {
+    font-weight: 400;
+}
+
+
+
+
+
+.portfolio-item {
+    position: relative;
+    width: 600px; /* 设置容器宽度 */
+    height: 338px; /* 设置容器高度 */
+    border: rgb(51, 51, 51, 1) 1px solid;
+    margin: auto auto 2rem;
+    cursor: pointer;
+    overflow: hidden; /* 确保图片和遮蔽层不会超出容器 */
+
+    display: flex; /* 启用 Flexbox 布局 */
+    justify-content: center; /* 水平居中 */
+    flex-direction: row;
+    align-items: center; /* 垂直居中 */
+}
+
+.portfolio-item .image-container { /* 新增样式 */
+    width: 600px; /* 设置容器宽度 */
+    height: 338px; /* 设置容器高度 */
+    overflow: hidden; /* 裁剪超出容器的内容 */
+    
+    flex: none; /* 防止 Flexbox 布局影响尺寸 */
+}
+
+.portfolio-item .caption {
+    position: absolute;
+    display: flex;
+    width: 100%; /* 与 .portfolio-item 宽度一致 */
+    height: 100%; /* 与 .portfolio-item 高度一致 */
+    align-items: center;
+    justify-content: center;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3; /* 确保文字在遮蔽层之上 */
+    
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .caption {
+    opacity: 1; /* 鼠标悬停时显示文字 */
+}
+
+.portfolio-item .caption.fade-out {
+    opacity: 0; /* 用于延迟隐藏 */
+    transition: opacity 0.3s ease; /* 添加透明度过渡 */
+}
+
+.portfolio-item .caption .caption-content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    color: #fff;
+    margin: 20px 20px;
+}
+
+.portfolio-item .caption .caption-content .title,
+.portfolio-item .caption .caption-content .body,
+.portfolio-item .caption .caption-content .footer {
+    opacity: 0;
+    transform: translateY(10px); /* 初始位置：向下偏移 px */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 添加 transform 过渡 */
+}
+
+/* 鼠标悬停时的渐入效果 */
+.portfolio-item:hover .caption .caption-content .title {
+    opacity: 1;
+    transform: translateY(0); /* 移动到原始位置 */
+    transition-delay: 0.1s;
+}
+
+.portfolio-item:hover .caption .caption-content .body {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.portfolio-item:hover .caption .caption-content .footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.portfolio-item .caption .caption-content .title {
+    color: #FFFFFF;
+    font-weight: bold;
+    border-bottom: #FFFFFF 1px solid;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.portfolio-item .caption .caption-content .body {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.portfolio-item .caption .caption-content .footer {
+position: absolute; /* 相对于父元素定位 */
+    bottom: 20px;
+    width: 90%; /* 宽度设置为 90% */
+    left: 0;
+    right: 0;
+    margin-left: auto; /* 水平居中 */
+    margin-right: auto; /* 水平居中 */
+    box-sizing: border-box; /* 包括 padding 和 border 在内的宽度计算 */
+
+}
+
+.portfolio-item .caption .caption-content .footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio-item .caption .caption-content h2 {
+    font-size : 24px;
+    line-height : 27px;
+    letter-spacing : 0.24px;
+}
+
+.portfolio-item .caption .caption-content p {
+    font-size : 18px;
+    line-height : 27px;
+    letter-spacing : 0.18px;
+    font-weight: 300;
+}
+
+.portfolio-item .image-container ::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1); /* 半透明黑色背景 */
+    opacity: 0; /* 初始状态下不可见 */
+    transition: opacity 0.3s ease;
+    z-index: 2; /* 确保遮蔽层在图片之上 */
+}
+
+.portfolio-item .portfolio-image {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: sepia(20%) ;
+}
+
+.portfolio-item:hover .portfolio-image {
+    transform: scale(1.05); /* 放大图片 */
+    filter: sepia(0%) blur(10px); /* 添加模糊效果 */
+}
+
+.portfolio-item .image-container :hover::before {
+    opacity: 1; /* 鼠标悬停时显示遮蔽层 */
+    backdrop-filter: blur(10px); /* 仅对背景模糊 */
+}
+
+
+.painting-item {
+    max-width: 1200px;
+    margin: auto auto 4rem;
+    cursor: pointer;
+}
+
+.painting-item .painting-image {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: sepia(20%);
+}
+
+.painting-item:hover .painting-image {
+    transform: scale(1.05);
+    filter: sepia(0%);
+}
+
+
+
+
+.clip-item {
+    border: rgb(255, 255, 255, 1) 1px solid;
+}
+
+
+
+
+
+.container .text{
+    color: #CCCCCC;
+}
+
+
+.footer .container{
+    /* 手軽に並列レイアウトができるスタイル */
+    display:flex;
+    align-items: center; /* 垂直方向を中央揃え */
+}
+
+.footer .container .left {
+    flex: 1; /* 左側の文が左寄りになる */
+    text-align: left; /* 左揃え */
+}
+
+.footer .container .left .text {
+    color: rgb(51, 51, 51);
+}
+
+.footer .container .right {
+    display:flex;
+    flex: 0; /* 必要以上に広がらない */
+    text-align: right; /* 左揃え */
+    margin-left: 10px; /* アイコン同士の間隔を追加 */
+}
+
+.social-link {
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4.3rem;
+    font-size: 1.5rem;
+    transition: background-color 0.15s ease-in-out;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.social-link:hover {
+    transition: opacity 0.2s ease-out;
+
+    /* background-color: rgb(128, 128, 128);
+    text-decoration: none; */
+}
+
+.footer .container .right .social-link .icon{
+    transform: scale(0.5);
+    align-items:last baseline; /* 垂直方向を中央揃え */
+}
+
+.footer .container .right .social-link .icon:hover{
+    transition: filter 0.3s ease;
+    filter: brightness(0.5);
+}
+
+
+
+
+
+
+.btn {
+    border: none !important;
+}
+
+.btn-primary {
+    background-color: rgb(128, 128, 128, 0) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.btn-light {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    color: #000000 !important;
+}
+
+.btn-light:hover,
+.btn-light:active {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 1) !important;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000 !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    border-color: rgba(0, 0, 0, 0.5) !important;
+}
 .search-dialog {
   position: fixed;
   top: 10%;

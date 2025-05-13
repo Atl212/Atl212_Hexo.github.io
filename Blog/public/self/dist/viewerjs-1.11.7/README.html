@@ -1,0 +1,1147 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;zh-TW&quot;,&quot;zh-HK&quot;,&quot;ja&quot;,&quot;default&quot;]" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Atl212 | Atl212</title><meta name="author" content="Atl212"><meta name="copyright" content="Atl212"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Viewer.js    JavaScript image viewer.   Website jquery-viewer - A jQuery plugin wrapper for Viewer.js.  Table of contents Features Main Getting started Keyboard support Options Methods Events No confl">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Atl212">
+<meta property="og:url" content="https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/README.html">
+<meta property="og:site_name" content="Atl212">
+<meta property="og:description" content="Viewer.js    JavaScript image viewer.   Website jquery-viewer - A jQuery plugin wrapper for Viewer.js.  Table of contents Features Main Getting started Keyboard support Options Methods Events No confl">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.atl212.com/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png">
+<meta property="article:published_time" content="2025-04-01T07:29:50.793Z">
+<meta property="article:modified_time" content="2025-04-01T07:29:50.793Z">
+<meta property="article:author" content="Atl212">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.atl212.com/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png"><link rel="shortcut icon" href="/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png"><link rel="canonical" href="https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/README.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Atl212_Hexo.github.io/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/Atl212_Hexo.github.io/',
+  algolia: undefined,
+  localSearch: {"path":"/Atl212_Hexo.github.io/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Atl212',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/Atl212_Hexo.github.io/self/atom-one-dark.css"><link rel="stylesheet" href="/Atl212_Hexo.github.io/self/bootstrap.self.css"><link rel="stylesheet" href="/Atl212_Hexo.github.io/self/dist/font-awesome-4.7.0/css/font-awesome.css"><link rel="stylesheet" href="/Atl212_Hexo.github.io/self/dist/simple-line-icons/css/simple-line-icons.css"><meta name="generator" content="Hexo 7.3.0"><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png" onerror="this.onerror=null;this.src='/Atl212_Hexo.github.io/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/Atl212_Hexo.github.io/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/Atl212_Hexo.github.io/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/Atl212_Hexo.github.io/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/Atl212_Hexo.github.io/"><span class="site-name">Atl212</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Atl212_Hexo.github.io/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">Atl212</h1></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Viewer-js"><a href="#Viewer-js" class="headerlink" title="Viewer.js"></a>Viewer.js</h1><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/viewerjs"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/npm/dm/viewerjs.svg" alt="Downloads"></a> <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/viewerjs"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/npm/v/viewerjs.svg" alt="Version"></a> <a target="_blank" rel="noopener" href="https://unpkg.com/viewerjs/dist/viewer.common.js"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/bundlephobia/minzip/viewerjs.svg" alt="Gzip Size"></a></p>
+<blockquote>
+<p>JavaScript image viewer.</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://fengyuanchen.github.io/viewerjs">Website</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/fengyuanchen/jquery-viewer">jquery-viewer</a> - A jQuery plugin wrapper for Viewer.js.</li>
+</ul>
+<h2 id="Table-of-contents"><a href="#Table-of-contents" class="headerlink" title="Table of contents"></a>Table of contents</h2><ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#main">Main</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#keyboard-support">Keyboard support</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#no-conflict">No conflict</a></li>
+<li><a href="#browser-support">Browser support</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#versioning">Versioning</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
+<li>Supports 53 <a href="#options">options</a></li>
+<li>Supports 23 <a href="#methods">methods</a></li>
+<li>Supports 17 <a href="#events">events</a></li>
+<li>Supports modal and inline modes</li>
+<li>Supports touch</li>
+<li>Supports move</li>
+<li>Supports zoom</li>
+<li>Supports rotation</li>
+<li>Supports scale (flip)</li>
+<li>Supports keyboard</li>
+<li>Cross-browser support</li>
+</ul>
+<h2 id="Main-files"><a href="#Main-files" class="headerlink" title="Main files"></a>Main files</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">dist/<br>├── viewer.css<br>├── viewer.min.css   (compressed)<br>├── viewer.js        (UMD)<br>├── viewer.min.js    (UMD, compressed)<br>├── viewer.common.js (CommonJS, default)<br>└── viewer.esm.js    (ES Module)<br></code></pre></td></tr></table></figure>
+
+<h2 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install viewerjs<br></code></pre></td></tr></table></figure>
+
+<p>In browser:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/path/to/viewer.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/path/to/viewer.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>The <a target="_blank" rel="noopener" href="https://github.com/cdnjs/cdnjs">cdnjs</a> provides CDN support for Viewer.js’s CSS and JavaScript. You can find the links <a target="_blank" rel="noopener" href="https://cdnjs.com/libraries/viewerjs">here</a>.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><h4 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(element[, options])<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>element</strong></p>
+<ul>
+<li>Type: <code>HTMLElement</code></li>
+<li>The target image or container of images for viewing.</li>
+</ul>
+</li>
+<li><p><strong>options</strong> (optional)</p>
+<ul>
+<li>Type: <code>Object</code></li>
+<li>The options for viewing. Check out the available <a href="#options">options</a>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- a block container is required --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;picture.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Picture&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;images&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;picture-1.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Picture 1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;picture-2.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Picture 2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;picture-3.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Picture 3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// You should import the CSS file.</span><br><span class="hljs-comment">// import &#x27;viewerjs/dist/viewer.css&#x27;;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Viewer</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;viewerjs&#x27;</span>;<br><br><span class="hljs-comment">// View an image.</span><br><span class="hljs-keyword">const</span> viewer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;image&#x27;</span>), &#123;<br>  <span class="hljs-attr">inline</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-title function_">viewed</span>(<span class="hljs-params"></span>) &#123;<br>    viewer.<span class="hljs-title function_">zoomTo</span>(<span class="hljs-number">1</span>);<br>  &#125;,<br>&#125;);<br><span class="hljs-comment">// Then, show the image by clicking it, or call `viewer.show()`.</span><br><br><span class="hljs-comment">// View a list of images.</span><br><span class="hljs-comment">// Note: All images within the container will be found by calling `element.querySelectorAll(&#x27;img&#x27;)`.</span><br><span class="hljs-keyword">const</span> gallery = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;images&#x27;</span>));<br><span class="hljs-comment">// Then, show one image by click it, or call `gallery.show()`.</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Keyboard-support"><a href="#Keyboard-support" class="headerlink" title="Keyboard support"></a>Keyboard support</h2><blockquote>
+<p>Only available in modal mode.</p>
+</blockquote>
+<ul>
+<li><code>Esc</code>: Exit full screen or close the viewer or exit modal mode or stop play.</li>
+<li><code>Space</code>: Stop play.</li>
+<li><code>Tab</code>: Switch the focus state on the buttons in the viewer.</li>
+<li><code>Enter</code>: Trigger the click event handler on the button.</li>
+<li><code>←</code>: View the previous image.</li>
+<li><code>→</code>: View the next image.</li>
+<li><code>↑</code>: Zoom in the image.</li>
+<li><code>↓</code>: Zoom out the image.</li>
+<li><code>Ctrl + 0</code>: Zoom out to initial size.</li>
+<li><code>Ctrl + 1</code>: Zoom in to natural size.</li>
+</ul>
+<p><a href="#table-of-contents">⬆ back to top</a></p>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>You may set viewer options with <code>new Viewer(image, options)</code>.<br>If you want to change the global default options, You may use <code>Viewer.setDefaults(options)</code>.</p>
+<h3 id="backdrop"><a href="#backdrop" class="headerlink" title="backdrop"></a>backdrop</h3><ul>
+<li>Type: <code>Boolean</code> or <code>String</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable the modal backdrop, specify <code>static</code> for the backdrop that will not close the modal on click.</p>
+<h3 id="button"><a href="#button" class="headerlink" title="button"></a>button</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Show the button on the top-right of the viewer.</p>
+<h3 id="navbar"><a href="#navbar" class="headerlink" title="navbar"></a>navbar</h3><ul>
+<li>Type: <code>Boolean</code> or <code>Number</code></li>
+<li>Default: <code>true</code></li>
+<li>Options:<ul>
+<li><code>0</code> or <code>false</code>: hide the navbar</li>
+<li><code>1</code> or <code>true</code>: show the navbar</li>
+<li><code>2</code>: show the navbar only when the screen width is greater than 768 pixels</li>
+<li><code>3</code>: show the navbar only when the screen width is greater than 992 pixels</li>
+<li><code>4</code>: show the navbar only when the screen width is greater than 1200 pixels</li>
+</ul>
+</li>
+</ul>
+<p>Specify the visibility of the navbar.</p>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><ul>
+<li>Type: <code>Boolean</code> or <code>Number</code> or <code>Function</code> or <code>Array</code></li>
+<li>Default: <code>true</code></li>
+<li>Options:<ul>
+<li><code>0</code> or <code>false</code>: hide the title</li>
+<li><code>1</code> or <code>true</code> or <code>Function</code> or <code>Array</code>: show the title</li>
+<li><code>2</code>: show the title only when the screen width is greater than 768 pixels</li>
+<li><code>3</code>: show the title only when the screen width is greater than 992 pixels</li>
+<li><code>4</code>: show the title only when the screen width is greater than 1200 pixels</li>
+<li><code>Function</code>: customize the title content</li>
+<li><code>[Number, Function]</code>: the first element indicate the visibility, the second element customize the title content</li>
+</ul>
+</li>
+</ul>
+<p>Specify the visibility and the content of the title.</p>
+<blockquote>
+<p>The name comes from the <code>alt</code> attribute of an image element or the image name parsed from its URL.</p>
+</blockquote>
+<p>For example, <code>title: 4</code> equals to:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(image, &#123;<br>  <span class="hljs-attr">title</span>: [<span class="hljs-number">4</span>, <span class="hljs-function">(<span class="hljs-params">image, imageData</span>) =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;image.alt&#125;</span> (<span class="hljs-subst">$&#123;imageData.naturalWidth&#125;</span> × <span class="hljs-subst">$&#123;imageData.naturalHeight&#125;</span>)`</span>]<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="toolbar"><a href="#toolbar" class="headerlink" title="toolbar"></a>toolbar</h3><ul>
+<li>Type: <code>Boolean</code> or <code>Number</code> or <code>Object</code></li>
+<li>Default: <code>true</code></li>
+<li>Options:<ul>
+<li><code>0</code> or <code>false</code>: hide the toolbar.</li>
+<li><code>1</code> or <code>true</code>: show the toolbar.</li>
+<li><code>2</code>: show the toolbar only when the screen width is greater than 768 pixels.</li>
+<li><code>3</code>: show the toolbar only when the screen width is greater than 992 pixels.</li>
+<li><code>4</code>: show the toolbar only when the screen width is greater than 1200 pixels.</li>
+<li><code>&#123; key: Boolean | Number &#125;</code>: show or hide the toolbar.</li>
+<li><code>&#123; key: String &#125;</code>: customize the size of the button.</li>
+<li><code>&#123; key: Function &#125;</code>: customize the click handler of the button.</li>
+<li><code>&#123; key: &#123; show: Boolean | Number, size: String, click: Function &#125;</code>: customize each property of the button.</li>
+<li>Available built-in keys: “zoomIn”, “zoomOut”, “oneToOne”, “reset”, “prev”, “play”, “next”, “rotateLeft”, “rotateRight”, “flipHorizontal”, “flipVertical”.</li>
+<li>Available built-in sizes: “small”, “medium” (default) and “large”.</li>
+</ul>
+</li>
+</ul>
+<p>Specify the visibility and layout of the toolbar its buttons.</p>
+<p>For example, <code>toolbar: 4</code> equals to:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(image, &#123;<br>  <span class="hljs-attr">toolbar</span>: &#123;<br>    <span class="hljs-attr">zoomIn</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">zoomOut</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">oneToOne</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">reset</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">prev</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">play</span>: &#123;<br>      <span class="hljs-attr">show</span>: <span class="hljs-number">4</span>,<br>      <span class="hljs-attr">size</span>: <span class="hljs-string">&#x27;large&#x27;</span>,<br>    &#125;,<br>    <span class="hljs-attr">next</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">rotateLeft</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">rotateRight</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">flipHorizontal</span>: <span class="hljs-number">4</span>,<br>    <span class="hljs-attr">flipVertical</span>: <span class="hljs-number">4</span>,<br>  &#125;,<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>see more for <a href="docs/examples/custom-toolbar.html">custom toolbar</a>.</p>
+</blockquote>
+<h3 id="className"><a href="#className" class="headerlink" title="className"></a>className</h3><ul>
+<li>Type: <code>String</code></li>
+<li>Default: <code>&#39;&#39;</code></li>
+</ul>
+<p>Custom class name(s) to add to the viewer’s root element.</p>
+<h3 id="container"><a href="#container" class="headerlink" title="container"></a>container</h3><ul>
+<li>Type: <code>Element</code> or <code>String</code></li>
+<li>Default: <code>&#39;body&#39;</code></li>
+<li>An element or a valid selector for <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">Document.querySelector</a></li>
+</ul>
+<p>Container to place the viewer in the modal mode.</p>
+<blockquote>
+<p>Only available when the <code>inline</code> option is set to <code>false</code>.</p>
+</blockquote>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Filter the images for viewing (should return <code>true</code> if the image is viewable, return <code>false</code> to ignore the image).</p>
+<p>For example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(image, &#123;<br>  <span class="hljs-title function_">filter</span>(<span class="hljs-params">image</span>) &#123;<br>    <span class="hljs-keyword">return</span> image.<span class="hljs-property">complete</span>;<br>  &#125;,<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Note that images without the <code>src</code> attribute set will be ignored by default.</p>
+</blockquote>
+<h3 id="fullscreen"><a href="#fullscreen" class="headerlink" title="fullscreen"></a>fullscreen</h3><ul>
+<li>Type: <code>Boolean</code> or <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions"><code>FullscreenOptions</code></a></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable to request full screen when play.</p>
+<blockquote>
+<p>Requires the browser supports <a target="_blank" rel="noopener" href="https://caniuse.com/fullscreen">Fullscreen API</a>.</p>
+</blockquote>
+<h3 id="inheritedAttributes"><a href="#inheritedAttributes" class="headerlink" title="inheritedAttributes"></a>inheritedAttributes</h3><ul>
+<li>Type: <code>Array</code></li>
+<li>Default: <code>[&#39;crossOrigin&#39;, &#39;decoding&#39;, &#39;isMap&#39;, &#39;loading&#39;, &#39;referrerPolicy&#39;, &#39;sizes&#39;, &#39;srcset&#39;, &#39;useMap&#39;]</code></li>
+</ul>
+<p>Define the extra attributes to inherit from the original image.</p>
+<blockquote>
+<p>Note that the basic attributes <code>src</code> and <code>alt</code> will always inherit from the original image.</p>
+</blockquote>
+<h3 id="initialCoverage"><a href="#initialCoverage" class="headerlink" title="initialCoverage"></a>initialCoverage</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>0.9</code></li>
+</ul>
+<p>Define the initial coverage of the viewing image. It must a positive number between 0 (0%) and 1 (100%).</p>
+<h3 id="initialViewIndex"><a href="#initialViewIndex" class="headerlink" title="initialViewIndex"></a>initialViewIndex</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>0</code></li>
+</ul>
+<p>Define the initial index of the image for viewing.</p>
+<blockquote>
+<p>Also used as the default parameter value of the <code>view</code> method.</p>
+</blockquote>
+<h3 id="inline"><a href="#inline" class="headerlink" title="inline"></a>inline</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>false</code></li>
+</ul>
+<p>Enable inline mode.</p>
+<h3 id="interval"><a href="#interval" class="headerlink" title="interval"></a>interval</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>5000</code></li>
+</ul>
+<p>The amount of time to delay between automatically cycling an image when playing.</p>
+<h3 id="keyboard"><a href="#keyboard" class="headerlink" title="keyboard"></a>keyboard</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable keyboard support.</p>
+<h3 id="focus"><a href="#focus" class="headerlink" title="focus"></a>focus</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Focus the active item in the navbar when initialized.</p>
+<blockquote>
+<p>Requires the <code>keyboard</code> option set to <code>true</code>.</p>
+</blockquote>
+<h3 id="loading"><a href="#loading" class="headerlink" title="loading"></a>loading</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Indicate if showing a loading spinner when loading the image or not.</p>
+<h3 id="loop"><a href="#loop" class="headerlink" title="loop"></a>loop</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Indicate if enabling loop viewing or not.</p>
+<blockquote>
+<p>If the current image is the last one, then the next one to view is the first one, and vice versa.</p>
+</blockquote>
+<h3 id="minWidth"><a href="#minWidth" class="headerlink" title="minWidth"></a>minWidth</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: 200</li>
+</ul>
+<p>Define the minimum width of the viewer.</p>
+<blockquote>
+<p>Only available in inline mode (set the <code>inline</code> option to <code>true</code>).</p>
+</blockquote>
+<h3 id="minHeight"><a href="#minHeight" class="headerlink" title="minHeight"></a>minHeight</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: 100</li>
+</ul>
+<p>Define the minimum height of the viewer.</p>
+<blockquote>
+<p>Only available in inline mode (set the <code>inline</code> option to <code>true</code>).</p>
+</blockquote>
+<h3 id="movable"><a href="#movable" class="headerlink" title="movable"></a>movable</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable to move the image.</p>
+<h3 id="rotatable"><a href="#rotatable" class="headerlink" title="rotatable"></a>rotatable</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable to rotate the image.</p>
+<h3 id="scalable"><a href="#scalable" class="headerlink" title="scalable"></a>scalable</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable to scale the image.</p>
+<h3 id="zoomable"><a href="#zoomable" class="headerlink" title="zoomable"></a>zoomable</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable to zoom the image.</p>
+<h3 id="zoomOnTouch"><a href="#zoomOnTouch" class="headerlink" title="zoomOnTouch"></a>zoomOnTouch</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable to zoom the current image by dragging on the touch screen.</p>
+<h3 id="zoomOnWheel"><a href="#zoomOnWheel" class="headerlink" title="zoomOnWheel"></a>zoomOnWheel</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable to zoom the image by wheeling the mouse.</p>
+<h3 id="slideOnTouch"><a href="#slideOnTouch" class="headerlink" title="slideOnTouch"></a>slideOnTouch</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable to slide to the next or previous image by swiping on the touch screen.</p>
+<h3 id="toggleOnDblclick"><a href="#toggleOnDblclick" class="headerlink" title="toggleOnDblclick"></a>toggleOnDblclick</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Indicate if toggle the image size between its natural size and initial size when double click on the image or not.</p>
+<p>In other words, call the <a href="#toggle"><code>toggle</code></a> method automatically when double click on the image.</p>
+<blockquote>
+<p>Requires <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Events/dblclick"><code>dblclick</code></a> event support.</p>
+</blockquote>
+<h3 id="tooltip"><a href="#tooltip" class="headerlink" title="tooltip"></a>tooltip</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Show the tooltip with image ratio (percentage) when zooming in or zooming out.</p>
+<h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>true</code></li>
+</ul>
+<p>Enable CSS3 Transition for some special elements.</p>
+<h3 id="zIndex"><a href="#zIndex" class="headerlink" title="zIndex"></a>zIndex</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>2015</code></li>
+</ul>
+<p>Define the CSS <code>z-index</code> value of the viewer in modal mode.</p>
+<h3 id="zIndexInline"><a href="#zIndexInline" class="headerlink" title="zIndexInline"></a>zIndexInline</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>0</code></li>
+</ul>
+<p>Define the CSS <code>z-index</code> value of the viewer in inline mode.</p>
+<h3 id="zoomRatio"><a href="#zoomRatio" class="headerlink" title="zoomRatio"></a>zoomRatio</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>0.1</code></li>
+</ul>
+<p>Define the ratio when zooming the image by wheeling the mouse.</p>
+<h3 id="minZoomRatio"><a href="#minZoomRatio" class="headerlink" title="minZoomRatio"></a>minZoomRatio</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>0.01</code></li>
+</ul>
+<p>Define the min ratio of the image when zooming out.</p>
+<h3 id="maxZoomRatio"><a href="#maxZoomRatio" class="headerlink" title="maxZoomRatio"></a>maxZoomRatio</h3><ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>100</code></li>
+</ul>
+<p>Define the max ratio of the image when zooming in.</p>
+<h3 id="url"><a href="#url" class="headerlink" title="url"></a>url</h3><ul>
+<li>Type: <code>String</code> or <code>Function</code></li>
+<li>Default: <code>&#39;src&#39;</code></li>
+</ul>
+<p>Define where to get the original image URL for viewing.</p>
+<blockquote>
+<p>If it is a string, it should be one of the attributes of each image element.<br>If it is a function, it should return a valid image URL.</p>
+</blockquote>
+<p>For example:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;picture.jpg?size=160&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(image, &#123;<br>  <span class="hljs-title function_">url</span>(<span class="hljs-params">image</span>) &#123;<br>    <span class="hljs-keyword">return</span> image.<span class="hljs-property">src</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&#x27;?size=160&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br>  &#125;,<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="ready"><a href="#ready" class="headerlink" title="ready"></a>ready</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>ready</code> event.</p>
+<h3 id="show"><a href="#show" class="headerlink" title="show"></a>show</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>show</code> event.</p>
+<h3 id="shown"><a href="#shown" class="headerlink" title="shown"></a>shown</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>shown</code> event.</p>
+<h3 id="hide"><a href="#hide" class="headerlink" title="hide"></a>hide</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>hide</code> event.</p>
+<h3 id="hidden"><a href="#hidden" class="headerlink" title="hidden"></a>hidden</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>hidden</code> event.</p>
+<h3 id="view"><a href="#view" class="headerlink" title="view"></a>view</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>view</code> event.</p>
+<h3 id="viewed"><a href="#viewed" class="headerlink" title="viewed"></a>viewed</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>viewed</code> event.</p>
+<h3 id="move"><a href="#move" class="headerlink" title="move"></a>move</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>move</code> event.</p>
+<h3 id="moved"><a href="#moved" class="headerlink" title="moved"></a>moved</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>moved</code> event.</p>
+<h3 id="rotate"><a href="#rotate" class="headerlink" title="rotate"></a>rotate</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>rotate</code> event.</p>
+<h3 id="rotated"><a href="#rotated" class="headerlink" title="rotated"></a>rotated</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>rotated</code> event.</p>
+<h3 id="scale"><a href="#scale" class="headerlink" title="scale"></a>scale</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>scale</code> event.</p>
+<h3 id="scaled"><a href="#scaled" class="headerlink" title="scaled"></a>scaled</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>scaled</code> event.</p>
+<h3 id="zoom"><a href="#zoom" class="headerlink" title="zoom"></a>zoom</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>zoom</code> event.</p>
+<h3 id="zoomed"><a href="#zoomed" class="headerlink" title="zoomed"></a>zoomed</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>zoomed</code> event.</p>
+<h3 id="play"><a href="#play" class="headerlink" title="play"></a>play</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>play</code> event.</p>
+<h3 id="stop"><a href="#stop" class="headerlink" title="stop"></a>stop</h3><ul>
+<li>Type: <code>Function</code></li>
+<li>Default: <code>null</code></li>
+</ul>
+<p>Shortcut of the <code>stop</code> event.</p>
+<p><a href="#table-of-contents">⬆ back to top</a></p>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><p>All methods allow chain composition.</p>
+<p>As there are some <strong>asynchronous</strong> processes when start the viewer, you should call a method only when it is available, see the following <strong>lifecycle</strong>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(image, &#123;<br>  <span class="hljs-title function_">ready</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">// 2 methods are available here: &quot;show&quot; and &quot;destroy&quot;.</span><br>  &#125;,<br>  <span class="hljs-title function_">shown</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">// 9 methods are available here: &quot;hide&quot;, &quot;view&quot;, &quot;prev&quot;, &quot;next&quot;, &quot;play&quot;, &quot;stop&quot;, &quot;full&quot;, &quot;exit&quot; and &quot;destroy&quot;.</span><br>  &#125;,<br>  <span class="hljs-title function_">viewed</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">// All methods are available here except &quot;show&quot;.</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">viewer</span>.<span class="hljs-title function_">zoomTo</span>(<span class="hljs-number">1</span>).<span class="hljs-title function_">rotateTo</span>(<span class="hljs-number">180</span>);<br>  &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="show-immediate"><a href="#show-immediate" class="headerlink" title="show([immediate])"></a>show([immediate])</h3><ul>
+<li><strong>immediate</strong> (optional):<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>false</code></li>
+<li>Indicates if show the viewer immediately or not.</li>
+</ul>
+</li>
+</ul>
+<p>Show the viewer.</p>
+<blockquote>
+<p>Only available in modal mode.</p>
+</blockquote>
+<h3 id="hide-immediate"><a href="#hide-immediate" class="headerlink" title="hide([immediate])"></a>hide([immediate])</h3><ul>
+<li><strong>immediate</strong> (optional):<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>false</code></li>
+<li>Indicates if hide the viewer immediately or not.</li>
+</ul>
+</li>
+</ul>
+<p>Hide the viewer.</p>
+<blockquote>
+<p>Only available in modal mode.</p>
+</blockquote>
+<h3 id="view-index"><a href="#view-index" class="headerlink" title="view([index])"></a>view([index])</h3><ul>
+<li><strong>index</strong> (optional):<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>0</code> (inherits from the <code>initialViewIndex</code> option)</li>
+<li>The index of the image for viewing</li>
+</ul>
+</li>
+</ul>
+<p>View one of the images with the image index. If the viewer is hidden, it will be shown first.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">view</span>(<span class="hljs-number">1</span>); <span class="hljs-comment">// View the second image</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="prev-loop-false"><a href="#prev-loop-false" class="headerlink" title="prev([loop&#x3D;false])"></a>prev([loop&#x3D;false])</h3><ul>
+<li><strong>loop</strong> (optional):<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>false</code></li>
+<li>Indicate if turn to view the last one when it is the first one at present.</li>
+</ul>
+</li>
+</ul>
+<p>View the previous image.</p>
+<h3 id="next-loop-false"><a href="#next-loop-false" class="headerlink" title="next([loop&#x3D;false])"></a>next([loop&#x3D;false])</h3><ul>
+<li><strong>loop</strong> (optional):<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>false</code></li>
+<li>Indicate if turn to view the first one  when it is the last one at present.</li>
+</ul>
+</li>
+</ul>
+<p>View the next image.</p>
+<h3 id="move-x-y-x"><a href="#move-x-y-x" class="headerlink" title="move(x[, y &#x3D; x])"></a>move(x[, y &#x3D; x])</h3><ul>
+<li><p><strong>x</strong>:</p>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>The moving distance in the horizontal direction.</li>
+</ul>
+</li>
+<li><p><strong>y</strong> (optional):</p>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>The moving distance in the vertical direction.</li>
+<li>If not present, its default value is <code>x</code></li>
+</ul>
+</li>
+</ul>
+<p>Move the image with relative offsets.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">move</span>(<span class="hljs-number">1</span>);<br>viewer.<span class="hljs-title function_">move</span>(-<span class="hljs-number">1</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// Move left</span><br>viewer.<span class="hljs-title function_">move</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>);  <span class="hljs-comment">// Move right</span><br>viewer.<span class="hljs-title function_">move</span>(<span class="hljs-number">0</span>, -<span class="hljs-number">1</span>); <span class="hljs-comment">// Move up</span><br>viewer.<span class="hljs-title function_">move</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);  <span class="hljs-comment">// Move down</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="moveTo-x-y-x"><a href="#moveTo-x-y-x" class="headerlink" title="moveTo(x[, y &#x3D; x])"></a>moveTo(x[, y &#x3D; x])</h3><ul>
+<li><p><strong>x</strong>:</p>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>The new position in the horizontal direction.</li>
+</ul>
+</li>
+<li><p><strong>y</strong> (optional):</p>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>The new position in the vertical direction.</li>
+<li>If not present, its default value is <code>x</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Move the image to an absolute point.</p>
+<h3 id="rotate-degree"><a href="#rotate-degree" class="headerlink" title="rotate(degree)"></a>rotate(degree)</h3><ul>
+<li><strong>degree</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>Rotate right: requires a positive number (degree &gt; 0)</li>
+<li>Rotate left: requires a negative number (degree &lt; 0)</li>
+</ul>
+</li>
+</ul>
+<p>Rotate the image with a relative degree.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">rotate</span>(<span class="hljs-number">90</span>);<br>viewer.<span class="hljs-title function_">rotate</span>(-<span class="hljs-number">90</span>);<br></code></pre></td></tr></table></figure>
+
+<h3 id="rotateTo-degree"><a href="#rotateTo-degree" class="headerlink" title="rotateTo(degree)"></a>rotateTo(degree)</h3><ul>
+<li><strong>degree</strong>:<ul>
+<li>Type: <code>Number</code></li>
+</ul>
+</li>
+</ul>
+<p>Rotate the image to an absolute degree.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">rotateTo</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">// Reset to zero degree</span><br>viewer.<span class="hljs-title function_">rotateTo</span>(<span class="hljs-number">360</span>); <span class="hljs-comment">// Rotate a full round</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="scale-scaleX-scaleY"><a href="#scale-scaleX-scaleY" class="headerlink" title="scale(scaleX[, scaleY])"></a>scale(scaleX[, scaleY])</h3><ul>
+<li><p><strong>scaleX</strong>:</p>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>1</code></li>
+<li>The scaling factor to apply on the abscissa of the image</li>
+<li>When equal to <code>1</code> it does nothing.</li>
+</ul>
+</li>
+<li><p><strong>scaleY</strong> (optional):</p>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>The scaling factor to apply on the ordinate of the image</li>
+<li>If not present, its default value is <code>scaleX</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Scale the image.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">scale</span>(-<span class="hljs-number">1</span>); <span class="hljs-comment">// Flip both horizontal and vertical</span><br>viewer.<span class="hljs-title function_">scale</span>(-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// Flip horizontal</span><br>viewer.<span class="hljs-title function_">scale</span>(<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>); <span class="hljs-comment">// Flip vertical</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="scaleX-scaleX"><a href="#scaleX-scaleX" class="headerlink" title="scaleX(scaleX)"></a>scaleX(scaleX)</h3><ul>
+<li><strong>scaleX</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>1</code></li>
+<li>The scaling factor to apply on the abscissa of the image</li>
+<li>When equal to <code>1</code> it does nothing</li>
+</ul>
+</li>
+</ul>
+<p>Scale the abscissa of the image.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">scaleX</span>(-<span class="hljs-number">1</span>); <span class="hljs-comment">// Flip horizontal</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="scaleY-scaleY"><a href="#scaleY-scaleY" class="headerlink" title="scaleY(scaleY)"></a>scaleY(scaleY)</h3><ul>
+<li><strong>scaleY</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: <code>1</code></li>
+<li>The scaling factor to apply on the ordinate of the image</li>
+<li>When equal to <code>1</code> it does nothing</li>
+</ul>
+</li>
+</ul>
+<p>Scale the ordinate of the image.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">scaleY</span>(-<span class="hljs-number">1</span>); <span class="hljs-comment">// Flip vertical</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="zoom-ratio-showTooltip-pivot"><a href="#zoom-ratio-showTooltip-pivot" class="headerlink" title="zoom(ratio[, showTooltip[, pivot]])"></a>zoom(ratio[, showTooltip[, pivot]])</h3><ul>
+<li><p><strong>ratio</strong>:</p>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>Zoom in: requires a positive number (ratio &gt; 0)</li>
+<li>Zoom out: requires a negative number (ratio &lt; 0)</li>
+</ul>
+</li>
+<li><p><strong>showTooltip</strong> (optional):</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>false</code></li>
+<li>Indicates whether to show the tooltip.</li>
+</ul>
+</li>
+<li><p><strong>pivot</strong> (optional):</p>
+<ul>
+<li>Type: <code>Object</code></li>
+<li>Default: <code>null</code></li>
+<li>Schema: <code>&#123; x: Number, y: Number &#125;</code></li>
+<li>The pivot point coordinate for zooming.</li>
+</ul>
+</li>
+</ul>
+<p>Zoom the image with a relative ratio</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">zoom</span>(<span class="hljs-number">0.1</span>);<br>viewer.<span class="hljs-title function_">zoom</span>(-<span class="hljs-number">0.1</span>);<br></code></pre></td></tr></table></figure>
+
+<h3 id="zoomTo-ratio-showTooltip-pivot"><a href="#zoomTo-ratio-showTooltip-pivot" class="headerlink" title="zoomTo(ratio[, showTooltip[, pivot]])"></a>zoomTo(ratio[, showTooltip[, pivot]])</h3><ul>
+<li><p><strong>ratio</strong>:</p>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>Requires a positive number (ratio &gt; 0)</li>
+</ul>
+</li>
+<li><p><strong>showTooltip</strong> (optional):</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: <code>false</code></li>
+<li>Indicates whether to show the tooltip.</li>
+</ul>
+</li>
+<li><p><strong>pivot</strong> (optional):</p>
+<ul>
+<li>Type: <code>Object</code></li>
+<li>Default: <code>null</code></li>
+<li>Schema: <code>&#123; x: Number, y: Number &#125;</code></li>
+<li>The pivot point coordinate for zooming.</li>
+</ul>
+</li>
+</ul>
+<p>Zoom the image to an absolute ratio.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js">viewer.<span class="hljs-title function_">zoomTo</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">// Zoom to zero size (0%)</span><br>viewer.<span class="hljs-title function_">zoomTo</span>(<span class="hljs-number">1</span>); <span class="hljs-comment">// Zoom to natural size (100%)</span><br><br><span class="hljs-comment">// Zoom to 50% from the center of the window.</span><br>viewer.<span class="hljs-title function_">zoomTo</span>(<span class="hljs-number">.5</span>, &#123;<br>  <span class="hljs-attr">x</span>: <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span> / <span class="hljs-number">2</span>,<br>  <span class="hljs-attr">y</span>: viewer.<span class="hljs-property">innerHeight</span> / <span class="hljs-number">2</span>,<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="play-fullscreen"><a href="#play-fullscreen" class="headerlink" title="play([fullscreen])"></a>play([fullscreen])</h3><ul>
+<li><strong>fullscreen</strong> (optional):<ul>
+<li>Type: <code>Boolean</code> or <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions"><code>FullscreenOptions</code></a></li>
+<li>Default: <code>false</code></li>
+<li>Indicate if request fullscreen or not.</li>
+</ul>
+</li>
+</ul>
+<p>Play the images.</p>
+<h3 id="stop-1"><a href="#stop-1" class="headerlink" title="stop()"></a>stop()</h3><p>Stop play.</p>
+<h3 id="full"><a href="#full" class="headerlink" title="full()"></a>full()</h3><p>Enter the modal mode.</p>
+<blockquote>
+<p>Only available in inline mode.</p>
+</blockquote>
+<h3 id="exit"><a href="#exit" class="headerlink" title="exit()"></a>exit()</h3><p>Exit the modal mode.</p>
+<blockquote>
+<p>Only available in inline mode.</p>
+</blockquote>
+<h3 id="tooltip-1"><a href="#tooltip-1" class="headerlink" title="tooltip()"></a>tooltip()</h3><p>Show the current ratio of the image by percentage.</p>
+<blockquote>
+<p>Requires the <code>tooltip</code> option set to <code>true</code>.</p>
+</blockquote>
+<h3 id="toggle"><a href="#toggle" class="headerlink" title="toggle()"></a>toggle()</h3><p>Toggle the image size between its current size and natural size.</p>
+<blockquote>
+<p>Used by the <a href="#toggleOnDblclick"><code>toggleOnDblclick</code></a> option.</p>
+</blockquote>
+<h3 id="reset"><a href="#reset" class="headerlink" title="reset()"></a>reset()</h3><p>Reset the image to its initial state.</p>
+<h3 id="update"><a href="#update" class="headerlink" title="update()"></a>update()</h3><p>Update the viewer instance when the source images changed (added, removed, or sorted).</p>
+<blockquote>
+<p>If you load images dynamically (with XMLHTTPRequest), you can use this method to add the new images to the viewer instance.</p>
+</blockquote>
+<h3 id="destroy"><a href="#destroy" class="headerlink" title="destroy()"></a>destroy()</h3><p>Destroy the viewer and remove the instance.</p>
+<p><a href="#table-of-contents">⬆ back to top</a></p>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><p>All events can access the viewer instance with <code>this.viewer</code> in its handler.</p>
+<blockquote>
+<p>Be careful to use these events with other components which have the same event names, e.g.: <a target="_blank" rel="noopener" href="https://getbootstrap.com/">Bootstrap</a>‘s modal.</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> viewer;<br><br>image.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;viewed&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">viewer</span> === viewer);<br>  <span class="hljs-comment">// &gt; true</span><br>&#125;);<br><br>viewer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>(image);<br></code></pre></td></tr></table></figure>
+
+<h3 id="ready-1"><a href="#ready-1" class="headerlink" title="ready"></a>ready</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail</strong>: <code>null</code></li>
+</ul>
+<p>This event fires when a viewer instance is ready for viewing.</p>
+<blockquote>
+<p>In modal mode, this event will not be triggered until you click on one of the images.</p>
+</blockquote>
+<h3 id="show-1"><a href="#show-1" class="headerlink" title="show"></a>show</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail</strong>: <code>null</code></li>
+</ul>
+<p>This event fires when the viewer modal starts to show.</p>
+<blockquote>
+<p>Only available in modal mode.</p>
+</blockquote>
+<h3 id="shown-1"><a href="#shown-1" class="headerlink" title="shown"></a>shown</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail</strong>: <code>null</code></li>
+</ul>
+<p>This event fires when the viewer modal has shown.</p>
+<blockquote>
+<p>Only available in modal mode.</p>
+</blockquote>
+<h3 id="hide-1"><a href="#hide-1" class="headerlink" title="hide"></a>hide</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail</strong>: <code>null</code></li>
+</ul>
+<p>This event fires when the viewer modal starts to hide.</p>
+<blockquote>
+<p>Only available in modal mode.</p>
+</blockquote>
+<h3 id="hidden-1"><a href="#hidden-1" class="headerlink" title="hidden"></a>hidden</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>false</code></li>
+<li><strong>event.detail</strong>: <code>null</code></li>
+</ul>
+<p>This event fires when the viewer modal has hidden.</p>
+<blockquote>
+<p>Only available in modal mode.</p>
+</blockquote>
+<h3 id="view-1"><a href="#view-1" class="headerlink" title="view"></a>view</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail.index</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The index of the original image.</li>
+</ul>
+</li>
+<li><strong>event.detail.image</strong>:<ul>
+<li>Type: <code>HTMLImageElement</code></li>
+<li>The current image (a clone of the original image).</li>
+</ul>
+</li>
+<li><strong>event.detail.originalImage</strong>:<ul>
+<li>Type: <code>HTMLImageElement</code></li>
+<li>The original image.</li>
+</ul>
+</li>
+</ul>
+<p>This event fires when a viewer starts to show (view) an image.</p>
+<h3 id="viewed-1"><a href="#viewed-1" class="headerlink" title="viewed"></a>viewed</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>false</code></li>
+<li><strong>event.detail</strong>: the same as the <code>view</code> event.</li>
+</ul>
+<p>This event fires when a viewer has shown (viewed) an image.</p>
+<h3 id="move-1"><a href="#move-1" class="headerlink" title="move"></a>move</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail.x</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The new position in the horizontal direction.</li>
+</ul>
+</li>
+<li><strong>event.detail.y</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The new position in the vertical direction.</li>
+</ul>
+</li>
+<li><strong>event.detail.oldX</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The old position in the horizontal direction.</li>
+</ul>
+</li>
+<li><strong>event.detail.oldY</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The old position in the vertical direction.</li>
+</ul>
+</li>
+<li><strong>event.detail.originalEvent</strong>:<ul>
+<li>Type: <code>Event</code> or <code>null</code></li>
+<li>Options: <code>pointermove</code>, <code>touchmove</code>, and <code>mousemove</code>.</li>
+</ul>
+</li>
+</ul>
+<p>This event fires when a viewer starts to move an image.</p>
+<h3 id="moved-1"><a href="#moved-1" class="headerlink" title="moved"></a>moved</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>false</code></li>
+<li><strong>event.detail</strong>: the same as the <code>move</code> event.</li>
+</ul>
+<p>This event fires when a viewer has moved an image.</p>
+<h3 id="rotate-1"><a href="#rotate-1" class="headerlink" title="rotate"></a>rotate</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail.degree</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The new rotation degrees.</li>
+</ul>
+</li>
+<li><strong>event.detail.oldDegree</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The old rotation degrees.</li>
+</ul>
+</li>
+</ul>
+<p>This event fires when a viewer starts to rotate an image.</p>
+<h3 id="rotated-1"><a href="#rotated-1" class="headerlink" title="rotated"></a>rotated</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>false</code></li>
+<li><strong>event.detail</strong>: the same as the <code>rotate</code> event.</li>
+</ul>
+<p>This event fires when a viewer has rotated an image.</p>
+<h3 id="scale-1"><a href="#scale-1" class="headerlink" title="scale"></a>scale</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail.scaleX</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The new scaling factor in the horizontal direction.</li>
+</ul>
+</li>
+<li><strong>event.detail.scaleY</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The new scaling factor in the vertical direction.</li>
+</ul>
+</li>
+<li><strong>event.detail.oldScaleX</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The old scaling factor in the horizontal direction.</li>
+</ul>
+</li>
+<li><strong>event.detail.oldScaleY</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The old scaling factor in the vertical direction.</li>
+</ul>
+</li>
+</ul>
+<p>This event fires when a viewer starts to scale an image.</p>
+<h3 id="scaled-1"><a href="#scaled-1" class="headerlink" title="scaled"></a>scaled</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>false</code></li>
+<li><strong>event.detail</strong>: the same as the <code>scale</code> event.</li>
+</ul>
+<p>This event fires when a viewer has scaled an image.</p>
+<h3 id="zoom-1"><a href="#zoom-1" class="headerlink" title="zoom"></a>zoom</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail.ratio</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The new (next) ratio of the image (<code>imageData.width / imageData.naturalWidth</code>).</li>
+</ul>
+</li>
+<li><strong>event.detail.oldRatio</strong>:<ul>
+<li>Type: <code>Number</code></li>
+<li>The old (current) ratio of the image.</li>
+</ul>
+</li>
+<li><strong>event.detail.originalEvent</strong>:<ul>
+<li>Type: <code>Event</code> or <code>null</code></li>
+<li>Options: <code>wheel</code>, <code>pointermove</code>, <code>touchmove</code>, and <code>mousemove</code>.</li>
+</ul>
+</li>
+</ul>
+<p>This event fires when a viewer starts to zoom (in or out) an image.</p>
+<h3 id="zoomed-1"><a href="#zoomed-1" class="headerlink" title="zoomed"></a>zoomed</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>false</code></li>
+<li><strong>event.detail</strong>: the same as the <code>zoom</code> event.</li>
+</ul>
+<p>This event fires when a viewer has zoomed (in or out) an image.</p>
+<h3 id="play-1"><a href="#play-1" class="headerlink" title="play"></a>play</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail</strong>: <code>null</code></li>
+</ul>
+<p>This event fires when the viewer starts to play.</p>
+<blockquote>
+<p>You can abort the playing process by calling <code>event.preventDefault()</code>.</p>
+</blockquote>
+<h3 id="stop-2"><a href="#stop-2" class="headerlink" title="stop"></a>stop</h3><ul>
+<li><strong>event.bubbles</strong>: <code>true</code></li>
+<li><strong>event.cancelable</strong>: <code>true</code></li>
+<li><strong>event.detail</strong>: <code>null</code></li>
+</ul>
+<p>This event fires when the viewer starts to stop.</p>
+<blockquote>
+<p>You can abort the stopping process by calling <code>event.preventDefault()</code>.</p>
+</blockquote>
+<p><a href="#table-of-contents">⬆ back to top</a></p>
+<h2 id="No-conflict"><a href="#No-conflict" class="headerlink" title="No conflict"></a>No conflict</h2><p>If you have to use another viewer with the same namespace, call the <code>Viewer.noConflict</code> static method to revert to it.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;other-viewer.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;viewer.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-title class_">Viewer</span>.<span class="hljs-title function_">noConflict</span>();</span><br><span class="language-javascript">  <span class="hljs-comment">// Code that uses other `Viewer` can follow here.</span></span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Browser-support"><a href="#Browser-support" class="headerlink" title="Browser support"></a>Browser support</h2><ul>
+<li>Chrome (latest)</li>
+<li>Firefox (latest)</li>
+<li>Safari (latest)</li>
+<li>Opera (latest)</li>
+<li>Edge (latest)</li>
+<li>Internet Explorer 9+</li>
+</ul>
+<h2 id="Contributing"><a href="#Contributing" class="headerlink" title="Contributing"></a>Contributing</h2><p>Please read through our <a href=".github/CONTRIBUTING.md">contributing guidelines</a>.</p>
+<h2 id="Versioning"><a href="#Versioning" class="headerlink" title="Versioning"></a>Versioning</h2><p>Maintained under the <a target="_blank" rel="noopener" href="https://semver.org/">Semantic Versioning guidelines</a>.</p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p><a target="_blank" rel="noopener" href="https://opensource.org/licenses/MIT">MIT</a> © <a target="_blank" rel="noopener" href="https://chenfengyuan.com/">Chen Fengyuan</a></p>
+<p><a href="#table-of-contents">⬆ back to top</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/Atl212_Hexo.github.io/img/bonfire-Icon-transparency.png" onerror="this.onerror=null;this.src='/Atl212_Hexo.github.io/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Atl212</div><div class="author-info-description">Just a software engineer website.</div><div class="site-data"><a href="/Atl212_Hexo.github.io/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/Atl212_Hexo.github.io/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/Atl212_Hexo.github.io/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Atl212" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://www.youtube.com/@YumeTsukii" target="_blank" title="'#24292e'"><i class="fab fa-youtube"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/2fb41cbd/" title="部署网站关键">部署网站关键</a><time datetime="2025-05-08T08:06:49.000Z" title="发表于 2025-05-08 17:06:49">2025-05-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/62980/" title="Github Action">Github Action</a><time datetime="2025-04-24T03:54:23.000Z" title="发表于 2025-04-24 12:54:23">2025-04-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/26314/" title="《白话机器学习的数学》正则化实现代码">《白话机器学习的数学》正则化实现代码</a><time datetime="2021-10-18T00:05:07.000Z" title="发表于 2021-10-18 09:05:07">2021-10-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Atl212_Hexo.github.io/posts/23601/" title="某类幂函数不定积分的步骤">某类幂函数不定积分的步骤</a><time datetime="2021-01-19T01:22:37.000Z" title="发表于 2021-01-19 10:22:37">2021-01-19</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/Atl212_Hexo.github.io/categories/Github/"><span class="card-category-list-name">Github</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Atl212_Hexo.github.io/categories/tmp/"><span class="card-category-list-name">tmp</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Atl212_Hexo.github.io/categories/%E6%95%B0%E5%AD%A6/"><span class="card-category-list-name">数学</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Atl212_Hexo.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/Atl212_Hexo.github.io/tags/tmp/" style="font-size: 1.1em; color: #999">tmp</a> <a href="/Atl212_Hexo.github.io/tags/Github/" style="font-size: 1.1em; color: #999">Github</a> <a href="/Atl212_Hexo.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">机器学习</a> <a href="/Atl212_Hexo.github.io/tags/%E8%B7%AF%E5%BE%84/" style="font-size: 1.1em; color: #999">路径</a> <a href="/Atl212_Hexo.github.io/tags/%E6%AD%A3%E5%88%99%E5%8C%96/" style="font-size: 1.1em; color: #999">正则化</a> <a href="/Atl212_Hexo.github.io/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 1.1em; color: #999">代码</a> <a href="/Atl212_Hexo.github.io/tags/Action/" style="font-size: 1.1em; color: #999">Action</a> <a href="/Atl212_Hexo.github.io/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 1.1em; color: #999">高等数学</a> <a href="/Atl212_Hexo.github.io/tags/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/" style="font-size: 1.1em; color: #999">不定积分</a> <a href="/Atl212_Hexo.github.io/tags/Python/" style="font-size: 1.1em; color: #999">Python</a> <a href="/Atl212_Hexo.github.io/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 1.1em; color: #999">部署</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/Atl212_Hexo.github.io/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/Atl212_Hexo.github.io/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/Atl212_Hexo.github.io/archives/2021/10/">
+            <span class="card-archive-list-date">
+              十月 2021
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/Atl212_Hexo.github.io/archives/2021/01/">
+            <span class="card-archive-list-date">
+              一月 2021
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div></div></div></main><footer id="footer" style="background: black;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 By Atl212</span></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Atl212_Hexo.github.io/js/utils.js"></script><script src="/Atl212_Hexo.github.io/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script src="/Atl212_Hexo.github.io/self/dist/jquery/jquery-3.7.1.min.js"></script><script src="/Atl212_Hexo.github.io/self/dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script><script src="/Atl212_Hexo.github.io/self/dist/aos/js/aos.js"></script><script src="/Atl212_Hexo.github.io/self/js/caption-mouseListener.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/Atl212_Hexo.github.io/404.html') : window.location.href = '/Atl212_Hexo.github.io/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/Atl212_Hexo.github.io/js/search/local-search.js"></script></div></div></body></html>
