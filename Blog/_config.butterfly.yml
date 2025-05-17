@@ -13,8 +13,9 @@ nav:
   # Navigation bar logo image
   logo:
   display_title: true
+  display_top: false
   # Whether to fix navigation bar
-  fixed: false
+  fixed: true
 
 menu:
   Home: / || fas fa-home
@@ -53,8 +54,8 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  fab fa-github: https://github.com/Atl212 || Github || '#24292e'
-  fab fa-youtube: https://www.youtube.com/@YumeTsukii || '#24292e'
+  fab fa-github: https://github.com/Atl212 || Github 
+  fab fa-youtube: https://www.youtube.com/@YumeTsukii || Youtube 
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
 # --------------------------------------
@@ -74,7 +75,7 @@ disable_top_img: false
 default_top_img: false
 
 # The banner image of index page
-index_img: /img/header-background-02.png
+index_img: /img/header_background_3_not_nosie.png
 
 # The banner image of archive page
 archive_img:
@@ -268,7 +269,13 @@ footer:
   owner:
     enable: true
     since: 2025
-  custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
+    custom_author:
+      enable: true
+      custom_author_text: 'Developer: @Atl212, UI Designer:@imat'
+
+  # custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
+  custom_text: 'Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://butterfly.js.org/">Butterfly</a>'
+  
   # Copyright of theme and framework
   copyright: true
 

@@ -1,5 +1,5 @@
-https://www.atl212.com/Atl212_Hexo.github.io/archives/index.html
 https://www.atl212.com/Atl212_Hexo.github.io/about/index.html
+https://www.atl212.com/Atl212_Hexo.github.io/archives/index.html
 https://www.atl212.com/Atl212_Hexo.github.io/categories/index.html
 https://www.atl212.com/Atl212_Hexo.github.io/tags/index.html
 https://www.atl212.com/Atl212_Hexo.github.io/self/custom-category.html

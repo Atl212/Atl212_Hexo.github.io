@@ -6866,6 +6866,8 @@ position: absolute; /* 相对于父元素定位 */
 
 
 .painting-item {
+    min-width: 600px;
+    min-height: 338px;
     max-width: 1200px;
     margin: auto auto 4rem;
     cursor: pointer;
@@ -6954,10 +6956,34 @@ position: absolute; /* 相对于父元素定位 */
 
 
 
-
+/* 原本index.css的修改覆盖 */
+a:hover {
+    text-decoration: none;
+}
 
 .container a:hover {
     text-decoration: none;
+}
+
+.content-section {
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+}
+
+#page-header #site-title, #page-header #site-subtitle {
+    text-align: left;
+    margin-left: 5%;
+}
+
+#page-header.full_page {
+    background-attachment: scroll, local;
+}
+
+
+
+/* bootstrap的部分代码 */
+.text-white {
+    /* margin-left: 10%; */
 }
 
 .btn {
