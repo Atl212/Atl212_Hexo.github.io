@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/categories/index.html</loc>
+    <loc>https://www.atl212.com/categories/index.html</loc>
     
     <lastmod>2025-05-17</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/index.html</loc>
+    <loc>https://www.atl212.com/tags/index.html</loc>
     
     <lastmod>2025-05-17</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/about/index.html</loc>
+    <loc>https://www.atl212.com/about/index.html</loc>
     
     <lastmod>2025-05-17</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/package.json</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/package.json</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/docs/index.html</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/index.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/package-lock.json</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/package-lock.json</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/docs/examples/custom-title.html</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/dynamic-viewer.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/docs/examples/custom-toolbar.html</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/custom-title.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/docs/examples/dynamic-viewer.html</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/custom-toolbar.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/docs/examples/moving-range-limit.html</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/viewer-in-modal.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/docs/examples/viewer-in-modal.html</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/moving-range-limit.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/simple-line-icons/History.html</loc>
+    <loc>https://www.atl212.com/self/dist/simple-line-icons/CONTRIBUTING.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/simple-line-icons/CODE_OF_CONDUCT.html</loc>
+    <loc>https://www.atl212.com/self/dist/simple-line-icons/CODE_OF_CONDUCT.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/simple-line-icons/LICENSE.html</loc>
+    <loc>https://www.atl212.com/self/dist/simple-line-icons/History.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/simple-line-icons/README.html</loc>
+    <loc>https://www.atl212.com/self/dist/simple-line-icons/LICENSE.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/simple-line-icons/bower.json</loc>
+    <loc>https://www.atl212.com/self/dist/simple-line-icons/README.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/simple-line-icons/CONTRIBUTING.html</loc>
+    <loc>https://www.atl212.com/self/dist/simple-line-icons/bower.json</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/simple-line-icons/package.json</loc>
+    <loc>https://www.atl212.com/self/dist/simple-line-icons/package.json</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/CHANGELOG.html</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/CHANGELOG.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/dist/viewerjs-1.11.7/README.html</loc>
+    <loc>https://www.atl212.com/self/dist/viewerjs-1.11.7/README.html</loc>
     
     <lastmod>2025-05-13</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/self/custom-category.html</loc>
+    <loc>https://www.atl212.com/self/custom-category.html</loc>
     
     <lastmod>2025-05-12</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/posts/2fb41cbd/</loc>
+    <loc>https://www.atl212.com/posts/2fb41cbd/</loc>
     
     <lastmod>2025-05-12</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/archives/index.html</loc>
+    <loc>https://www.atl212.com/archives/index.html</loc>
     
     <lastmod>2025-05-12</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/posts/62980/</loc>
+    <loc>https://www.atl212.com/posts/62980/</loc>
     
     <lastmod>2025-05-12</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/posts/23601/</loc>
+    <loc>https://www.atl212.com/posts/23601/</loc>
     
     <lastmod>2025-05-12</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/posts/26314/</loc>
+    <loc>https://www.atl212.com/posts/26314/</loc>
     
     <lastmod>2025-05-12</lastmod>
     
@@ -237,7 +237,7 @@
   
 
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io</loc>
+    <loc>https://www.atl212.com/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -245,77 +245,77 @@
 
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://www.atl212.com/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</loc>
+    <loc>https://www.atl212.com/tags/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://www.atl212.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/Python/</loc>
+    <loc>https://www.atl212.com/tags/Python/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/%E6%AD%A3%E5%88%99%E5%8C%96/</loc>
+    <loc>https://www.atl212.com/tags/%E6%AD%A3%E5%88%99%E5%8C%96/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/%E4%BB%A3%E7%A0%81/</loc>
+    <loc>https://www.atl212.com/tags/%E4%BB%A3%E7%A0%81/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/Github/</loc>
+    <loc>https://www.atl212.com/tags/Github/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/Action/</loc>
+    <loc>https://www.atl212.com/tags/Action/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/%E9%83%A8%E7%BD%B2/</loc>
+    <loc>https://www.atl212.com/tags/%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/%E8%B7%AF%E5%BE%84/</loc>
+    <loc>https://www.atl212.com/tags/%E8%B7%AF%E5%BE%84/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/tags/tmp/</loc>
+    <loc>https://www.atl212.com/tags/tmp/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -324,28 +324,28 @@
 
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://www.atl212.com/categories/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://www.atl212.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/categories/Github/</loc>
+    <loc>https://www.atl212.com/categories/Github/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.atl212.com/Atl212_Hexo.github.io/categories/tmp/</loc>
+    <loc>https://www.atl212.com/categories/tmp/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

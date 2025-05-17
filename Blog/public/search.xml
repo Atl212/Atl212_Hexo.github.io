@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>某类幂函数不定积分的步骤</title>
-    <url>/Atl212_Hexo.github.io/posts/23601/</url>
+    <url>/posts/23601/</url>
     <content><![CDATA[<p>$$<br>\int x^{α}dx &#x3D; \int \frac{x^{α+1}}{α+1}+c(α\neq-1)<br>$$</p>
 <p>我们知道幂函数的不定积分公式一般都可以表示为这个式子（除了指数等于-1），但是如果每次都按照式子的步骤来写就会感到麻烦。</p>
 <p>当α是整数时候还好，如果α是”分数”或者是”负数”或者是”负数的分数”时候，因为分母的系数是在下方所以要除了算出来外，最后还要倒过来。</p>
@@ -27,7 +27,7 @@
   </entry>
   <entry>
     <title>《白话机器学习的数学》正则化实现代码</title>
-    <url>/Atl212_Hexo.github.io/posts/26314/</url>
+    <url>/posts/26314/</url>
     <content><![CDATA[<p>实现代码：</p>
 <span id="more"></span> 
 
@@ -45,7 +45,7 @@
   </entry>
   <entry>
     <title>Github Action</title>
-    <url>/Atl212_Hexo.github.io/posts/62980/</url>
+    <url>/posts/62980/</url>
     <content><![CDATA[<span id="more"></span> 
 
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天试着搭了hexo博客，本来部署直接用 hexo d 命令进行的部署。</p>
@@ -65,7 +65,7 @@
   </entry>
   <entry>
     <title>部署网站关键</title>
-    <url>/Atl212_Hexo.github.io/posts/2fb41cbd/</url>
+    <url>/posts/2fb41cbd/</url>
     <content><![CDATA[<p>一个就是，这个 Github Action 的 deploy 配置脚本里面，其实也并不需要这个什么 hexo 部署的代码。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">- name: Generate static pages<br>  run: |<br>    hexo clean<br>    hexo generate --debug<br>  working-directory: Blog<br></code></pre></td></tr></table></figure>
 
