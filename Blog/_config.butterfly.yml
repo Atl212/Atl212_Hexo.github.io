@@ -54,8 +54,8 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  fab fa-github: https://github.com/Atl212 || Github 
-  fab fa-youtube: https://www.youtube.com/@YumeTsukii || Youtube 
+  fab fa-github: https://github.com/Atl212 || Github
+  fab fa-youtube: https://www.youtube.com/@YumeTsukii || Youtube
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
 # --------------------------------------
@@ -271,11 +271,11 @@ footer:
     since: 2025
     custom_author:
       enable: true
-      custom_author_text: 'Developer: @Atl212, UI Designer:@imat'
+      custom_author_text: "Developer: @Atl212, UI Designer:@imat"
 
   # custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
   custom_text: 'Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://butterfly.js.org/">Butterfly</a>'
-  
+
   # Copyright of theme and framework
   copyright: true
 
@@ -538,7 +538,7 @@ comments:
   # Leave it empty if you don't need comments
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # Format of two comments system : Disqus,Waline
-  use:
+  use: Waline
   # Display the comment name next to the button
   text: false
   # Lazyload: The comment system will be load when comment element enters the browser's viewport.
@@ -594,11 +594,14 @@ valine:
 # Waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
 waline:
-  serverURL:
+  serverURL: https://blog-comment-git-main-atl212s-projects.vercel.app/
   bg:
   # Use Waline pageview count as the page view count
   pageview: false
   option:
+    # requiredMeta: [nick, mail] # 选定昵称和评论为必填项
+    # locale:
+    #   placeholder: 昵称和邮箱为必填项，为了您能及时收到相关回复的邮件通知，请确保邮箱的正确性！ # 内容区提示
 
 # Utterances
 # https://utteranc.es/
