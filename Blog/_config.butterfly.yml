@@ -271,10 +271,10 @@ footer:
     since: 2025
     custom_author:
       enable: true
-      custom_author_text: "Developer: @Atl212, UI Designer:@imat"
+      custom_author_text: 'Developer: <a id="footer_underline"> @Atl212 </a>, UI Designer: <a id="footer_underline">@imat</a>'
 
   # custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
-  custom_text: 'Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://butterfly.js.org/">Butterfly</a>'
+  custom_text: 'Powered by <a id="footer_underline" href="https://hexo.io/">Hexo</a> | Theme <a id="footer_underline" href="https://butterfly.js.org/" style="text-decoration: underline;">Butterfly</a>'
 
   # Copyright of theme and framework
   copyright: true
@@ -484,7 +484,7 @@ search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
   use: local_search
-  placeholder:
+  placeholder: ...
 
   # Algolia Search
   algolia_search:

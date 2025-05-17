@@ -6954,7 +6954,19 @@ position: absolute; /* 相对于父元素定位 */
 
 
 
+/* 其他 */
 
+#footer_underline{
+    text-decoration: underline;
+}
+
+#nav {
+    padding: 0 5%;
+}
+
+#nav.show {
+    border-bottom: 1px solid #333;
+}
 
 /* 原本index.css的修改覆盖 */
 a:hover {
@@ -6979,7 +6991,9 @@ a:hover {
     background-attachment: scroll, local;
 }
 
-
+.custom-hr, .search-dialog hr  {
+    border: 1px solid rgba(255,255,255,0.4);
+}
 
 /* bootstrap的部分代码 */
 .text-white {
