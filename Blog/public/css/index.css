@@ -6442,20 +6442,6 @@ body {
 
 
 
-#musicButton {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: auto;
-    font-size: 18px;
-    z-index: 1000;
-}
-
-
-.nav-space{
-    height: 80px;
-}
-
 /* ナビゲーションバー全体 */
 .navbar {
     position: fixed;
@@ -6697,8 +6683,8 @@ p {
 
 .portfolio-item {
     position: relative;
-    width: 600px; /* 设置容器宽度 */
-    height: 338px; /* 设置容器高度 */
+    width: 70%; /* 设置容器宽度 */
+    height: 318px; /* 设置容器高度 */
     border: rgb(51, 51, 51, 1) 1px solid;
     margin: auto auto 2rem;
     cursor: pointer;
@@ -6711,8 +6697,8 @@ p {
 }
 
 .portfolio-item .image-container { /* 新增样式 */
-    width: 600px; /* 设置容器宽度 */
-    height: 338px; /* 设置容器高度 */
+    width: 100%; /* 设置容器宽度 */
+    height: 100%; /* 设置容器高度 */
     overflow: hidden; /* 裁剪超出容器的内容 */
     
     flex: none; /* 防止 Flexbox 布局影响尺寸 */
@@ -6851,9 +6837,8 @@ position: absolute; /* 相对于父元素定位 */
 
 
 .painting-item {
-    min-width: 600px;
-    min-height: 338px;
-    max-width: 1200px;
+    min-width: 70%;
+    max-width: 100%;
     margin: auto auto 4rem;
     cursor: pointer;
 }
@@ -6982,7 +6967,7 @@ a:hover {
     padding-bottom: 1rem;
 }
 
-#page-header #site-title, #page-header #site-subtitle {
+#page-header #site-title, #page-header #site-subtitle, #page-header #site_social_icons  {
     text-align: left;
     margin-left: 5%;
 }
