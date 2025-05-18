@@ -6440,7 +6440,9 @@ body {
 
 
 
-
+.nav-space{
+    height: 80px;
+}
 
 /* ナビゲーションバー全体 */
 .navbar {
@@ -6466,7 +6468,7 @@ body {
     color: #FFFFFF;
     background: none; /* 背景を消す */
     border: none; /* ボーダーを消す */
-    margin-left: 20px; /* 各ボタンの間隔を調整 */
+    margin-left: 1.25em; /* 各ボタンの間隔を調整 */
     cursor: pointer; /* クリックできるマウスカーソル */
 }
 .navbar-left .top-nav:hover {
@@ -6487,7 +6489,7 @@ body {
     background: none; /* 背景を消す */
     border: none; /* ボーダーを消す */
     cursor: pointer; /* クリックできるマウスカーソル */
-    margin-left: 20px; /* 各ボタンの間隔を調整 */
+    margin-left: 1.25em; /* 各ボタンの間隔を調整 */
     border-bottom: 2px solid transparent; /* 初期状態でボーダーは透明 */
 }
 
@@ -6574,10 +6576,10 @@ body {
         font-size: 2.5rem;
     }
 }
-
+/* 
 p {
     font-size: 1.25rem;
-}
+} */
 
 
 .content-section {
@@ -6587,8 +6589,8 @@ p {
 
 .content-section-heading h2 {
     font-weight : bold;
-    font-size : 36px;
-    letter-spacing : 0.36px;
+    font-size : 2.25em;
+    letter-spacing : 0.0225em;
     color : #FFFFFF;
     color : rgb(255, 255, 255);
 }
@@ -6617,7 +6619,7 @@ p {
     width: 100vw; /* 画面の幅いっぱいにする */
 
     display: flex;
-    gap: 20px;
+    gap: 1.25em;
 
     transition: opacity 0.2s ease-out;
 }
@@ -6662,7 +6664,7 @@ p {
 .history-item,
 .strength-table,
 .btn {
-    font-size: 1.25rem;
+    font-size: 1rem;
     width: auto;
     margin-left: auto;
     margin-right: auto;
@@ -6684,7 +6686,7 @@ p {
 .portfolio-item {
     position: relative;
     width: 70%; /* 设置容器宽度 */
-    height: 318px; /* 设置容器高度 */
+    aspect-ratio: 100 / 56; /* 设置宽高比为100:56，相当于56%的高度 */
     border: rgb(51, 51, 51, 1) 1px solid;
     margin: auto auto 2rem;
     cursor: pointer;
@@ -6735,7 +6737,7 @@ p {
     box-sizing: border-box;
 
     color: #fff;
-    margin: 20px 20px;
+    margin: 1.25em 1.25em;
 }
 
 .portfolio-item .caption .caption-content .title,
@@ -6765,45 +6767,52 @@ p {
     transition-delay: 0.3s;
 }
 
+.portfolio-item .caption .caption-content .header{
+    height: 10%;
+}
+
 .portfolio-item .caption .caption-content .title {
     color: #FFFFFF;
     font-weight: bold;
     border-bottom: #FFFFFF 1px solid;
     padding-bottom: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 }
 
 .portfolio-item .caption .caption-content .body {
-    margin-bottom: 20px;
+    height: 50%;
+    margin-top: 0.7em;
+    margin-bottom: 1.25em;
     text-align: justify;
 }
 
 .portfolio-item .caption .caption-content .footer {
 position: absolute; /* 相对于父元素定位 */
-    bottom: 20px;
+    bottom: 1.25em;
+    height: 10%;
     width: 90%; /* 宽度设置为 90% */
     left: 0;
     right: 0;
     margin-left: auto; /* 水平居中 */
     margin-right: auto; /* 水平居中 */
     box-sizing: border-box; /* 包括 padding 和 border 在内的宽度计算 */
-
 }
 
 .portfolio-item .caption .caption-content .footer-content {
+    height: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .portfolio-item .caption .caption-content h2 {
-    font-size : 24px;
-    line-height : 27px;
-    letter-spacing : 0.24px;
+    font-size : 1.5em;
+    line-height : 1.6875em;
+    letter-spacing : 0.015em;
 }
 
 .portfolio-item .caption .caption-content p {
-    font-size : 18px;
-    line-height : 27px;
+    font-size : 1em;
+    line-height : 1.6875em;
     letter-spacing : 0.18px;
     font-weight: 300;
 }
@@ -6967,7 +6976,7 @@ a:hover {
     padding-bottom: 1rem;
 }
 
-#page-header #site-title, #page-header #site-subtitle, #page-header #site_social_icons  {
+#page-header #site-title, #page-header #site-subtitle {
     text-align: left;
     margin-left: 5%;
 }
@@ -7011,7 +7020,7 @@ a:hover {
 
 .btn-secondary {
     background-color: rgba(255, 255, 255, 1) !important;
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: bold;
     color: #000000 !important;
 }

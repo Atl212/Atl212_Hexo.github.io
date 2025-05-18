@@ -414,7 +414,7 @@ rightside_scroll_percent: false
 rightside_item_order:
   enable: true
   # Default: readmode,translate,darkmode,hideAside
-  hide: 
+  hide:
   # Default: toc,chat,comment
   show: readmode
 
@@ -1067,12 +1067,13 @@ inject:
     - <script src="/self/dist/jquery/jquery-3.7.1.min.js"></script>
     - <script src="/self/dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     # - <script src="/self/dist/viewerjs-1.11.7/dist/viewer.js"></script>
-    - <script src="/self/dist/aos/js/aos.js"></script>
+    # - <script src="/self/dist/aos/js/aos.js"></script>
     # - <script src="/self/js/aos.js"></script>
     # - <script src="/self/js/audio.js"></script>
     # - <script src="/self/js/image-gallery.js"></script>
     # - <script src="/self/js/scroll-to-location.js"></script>
     - <script src="/self/js/caption-mouseListener.js"></script>
+    - <script src="/self/js/removeBody.js"></script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
