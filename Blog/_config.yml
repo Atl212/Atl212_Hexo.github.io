@@ -5,14 +5,14 @@
 # Site
 title: Atl212
 subtitle: "A Personal Website."
-description: "Just a software engineer website."
+description: "用来记录自己的胡言乱语的。"
 keywords:
 author: Atl212
 language:
   - zh-CN
-  - en
   - zh-TW
   - zh-HK
+  - en
   - ja
 timezone: "Asia/Tokyo"
 

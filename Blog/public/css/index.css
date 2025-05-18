@@ -4326,21 +4326,6 @@ figure.highlight pre .javascript .function {
     display: none;
   }
 }
-#rightside #go-up .scroll-percent {
-  display: none;
-}
-#rightside #go-up.show-percent .scroll-percent {
-  display: block;
-}
-#rightside #go-up.show-percent .scroll-percent + i {
-  display: none;
-}
-#rightside #go-up:hover .scroll-percent {
-  display: none;
-}
-#rightside #go-up:hover .scroll-percent + i {
-  display: block;
-}
 #sidebar #menu-mask {
   position: fixed;
   z-index: 102;
@@ -6964,8 +6949,23 @@ position: absolute; /* 相对于父元素定位 */
     padding: 0 5%;
 }
 
-#nav.show {
+[data-theme='dark'] #nav.show,
+[data-theme='dark'] #page-header #nav.show {
+    background-color: rgba(0, 0, 0, 0.5); /* 背景黒 */
     border-bottom: 1px solid #333;
+    backdrop-filter: blur(60px) brightness(1); /* 背景模糊和亮度调整 */
+}
+
+#page-header.not-top-img #nav a.nav-site-title {
+    color: #FFFFFF;
+}
+
+#page-header.not-top-img #nav a.nav-site-title:hover{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#page-header.not-home-page{
+    background-position: 50% 75%;
 }
 
 /* 原本index.css的修改覆盖 */

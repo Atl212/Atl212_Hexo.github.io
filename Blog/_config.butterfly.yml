@@ -12,17 +12,17 @@
 nav:
   # Navigation bar logo image
   logo:
-  display_title: true
-  display_top: false
+  display_title: false
+  display_top: true
   # Whether to fix navigation bar
   fixed: true
 
 menu:
-  Home: / || fas fa-home
-  Categories: /categories/ || fas fa-th
-  Tags: /tags/ || fas fa-tags
-  Archives: /archives/ || fas fa-archive
-  About: /about/ || fas fa-user
+  主页: / || fas fa-home
+  分类: /categories/ || fas fa-th
+  # 标签: /tags/ || fas fa-tags
+  时间轴: /archives/ || fas fa-archive
+  关于: /about/ || fas fa-user
   # tmp: /realestate/ || fas fa-chart-line
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
@@ -56,6 +56,7 @@ code_blocks:
 social:
   fab fa-github: https://github.com/Atl212 || Github
   fab fa-youtube: https://www.youtube.com/@YumeTsukii || Youtube
+  fas fa-envelope: mailto:jamespusherland@gmail.com || Mail
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
 # --------------------------------------
@@ -271,7 +272,7 @@ footer:
     since: 2025
     custom_author:
       enable: true
-      custom_author_text: 'Developer: <a id="footer_underline"> @Atl212 </a>, UI Designer: <a id="footer_underline">@imat</a>'
+      custom_author_text: 'Developer: <a id="footer_underline" href="mailto:jamespusherland@gmail.com"> @Atl212 </a>, UI Designer: <a id="footer_underline">@imat</a>'
 
   # custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
   custom_text: 'Powered by <a id="footer_underline" href="https://hexo.io/">Hexo</a> | Theme <a id="footer_underline" href="https://butterfly.js.org/" style="text-decoration: underline;">Butterfly</a>'
@@ -328,7 +329,7 @@ aside:
     expand: none
     sort_order:
   card_tags:
-    enable: true
+    enable: false
     # If set 0 will show all
     limit: 40
     color: false
@@ -405,17 +406,17 @@ darkmode:
   end: 0
 
 # Show scroll percent in scroll-to-top button
-rightside_scroll_percent: true
+rightside_scroll_percent: false
 
 # Don't modify the following settings unless you know how they work
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
 # Don't repeat the same value
 rightside_item_order:
-  enable: false
+  enable: true
   # Default: readmode,translate,darkmode,hideAside
-  hide:
+  hide: 
   # Default: toc,chat,comment
-  show:
+  show: readmode
 
 # --------------------------------------
 # Global Settings

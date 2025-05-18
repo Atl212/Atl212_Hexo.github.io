@@ -394,16 +394,29 @@ document.addEventListener('DOMContentLoaded', () => {
    * 滾動處理
    */
   const scrollFn = () => {
+    // 获取右侧工具栏元素（如返回顶部按钮等）
     const $rightside = document.getElementById('rightside')
+    
+    // 获取窗口可视高度，并加上 56（可能是导航栏高度）
     const innerHeight = window.innerHeight + 56
+
+    // 初始化记录上一次滚动位置的变量
     let initTop = 0
+
+    // 获取页面头部导航栏元素
     const $header = document.getElementById('page-header')
+
+    // 检查是否存在聊天按钮（chatBtn 是全局变量）
     const isChatBtn = typeof chatBtn !== 'undefined'
+
+    // 从全局配置中获取是否显示右侧滚动百分比
     const isShowPercent = GLOBAL_CONFIG.percent.rightside
 
     // 檢查文檔高度是否小於視窗高度
     const checkDocumentHeight = () => {
+      // 判断页面内容是否太短（不满一屏）
       if (document.body.scrollHeight <= innerHeight) {
+        // 页面太短，显示右侧工具栏
         $rightside.classList.add('rightside-show')
         return true
       }
@@ -411,50 +424,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 如果文檔高度小於視窗高度,直接返回
+    // 如果页面内容太短，则不继续添加滚动监听
     if (checkDocumentHeight()) return
 
     // find the scroll direction
+    // 判断滚动方向：向下滚动返回 true，向上返回 false
     const scrollDirection = currentTop => {
       const result = currentTop > initTop // true is down & false is up
       initTop = currentTop
       return result
     }
-
+    
+    // 标记当前滚动方向状态（'up', 'down' 或空）
     let flag = ''
+    
+    // 定义实际的滚动处理逻辑，并使用节流函数防止频繁触发
     const scrollTask = btf.throttle(() => {
+      // 获取当前滚动高度（兼容写法）
       const currentTop = window.scrollY || document.documentElement.scrollTop
+      // 判断当前滚动方向
       const isDown = scrollDirection(currentTop)
+
+      // 滚动超过顶部 56px（即离开了头部区域）
       if (currentTop > 56) {
+        // 第一次进入滚动区域时，固定导航栏并显示右侧工具栏
         if (flag === '') {
-          $header.classList.add('nav-fixed')
+          // $header.classList.add('nav-fixed')
           $rightside.classList.add('rightside-show')
         }
 
+        // 当前是向下滚动
         if (isDown) {
+          // 如果状态从其他方向变为向下：隐藏导航栏、隐藏聊天按钮
           if (flag !== 'down') {
-            $header.classList.remove('nav-visible')
+            // $header.classList.remove('nav-visible')
             isChatBtn && window.chatBtn.hide()
             flag = 'down'
           }
-        } else {
+        } 
+        // 当前是向上滚动
+        else {
+          // 如果状态从其他方向变为向上：显示导航栏、显示聊天按钮
           if (flag !== 'up') {
-            $header.classList.add('nav-visible')
+            // $header.classList.add('nav-visible')
             isChatBtn && window.chatBtn.show()
             flag = 'up'
           }
         }
-      } else {
+      } 
+       // 滚动高度小于等于 56（接近页面顶部）
+      else {
         flag = ''
+        // 回到页面最顶端，移除固定导航栏和显示状态
         if (currentTop === 0) {
-          $header.classList.remove('nav-fixed', 'nav-visible')
+          // $header.classList.remove('nav-fixed', 'nav-visible')
         }
+        // 隐藏右侧工具栏
         $rightside.classList.remove('rightside-show')
       }
-
+      // 如果启用了滚动百分比功能，则调用百分比显示函数
       isShowPercent && rightsideScrollPercent(currentTop)
+      // 再次检查页面高度是否太短（可能动态加载内容后改变）
       checkDocumentHeight()
+      // 节流时间设为 300ms
     }, 300)
-
+    // 添加滚动事件监听，适配 PJAX 页面（通过 btf 工具封装）
     btf.addEventListenerPjax(window, 'scroll', scrollTask, { passive: true })
   }
 
