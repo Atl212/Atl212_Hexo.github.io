@@ -702,6 +702,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
+  document.getElementById('go-up').addEventListener('click', () => {
+    btf.scrollToDest(0, 500);
+  });
+
   /**
    * menu
    * 側邊欄sub-menu 展開/收縮

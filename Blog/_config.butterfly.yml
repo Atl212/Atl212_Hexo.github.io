@@ -18,11 +18,11 @@ nav:
   fixed: true
 
 menu:
-  主页: / || fas fa-home
-  分类: /categories/ || fas fa-th
+  主页: /
+  分类: /categories/
   # 标签: /tags/ || fas fa-tags
-  时间轴: /archives/ || fas fa-archive
-  关于: /about/ || fas fa-user
+  时间轴: /archives/
+  关于: /about/
   # tmp: /realestate/ || fas fa-chart-line
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
@@ -272,7 +272,7 @@ footer:
     since: 2025
     custom_author:
       enable: true
-      custom_author_text: 'Developer: <a id="footer_underline" href="mailto:jamespusherland@gmail.com"> @Atl212 </a>, UI Designer: <a id="footer_underline" href="https://space.bilibili.com/10352146">@imat</a>'
+      custom_author_text: 'Developer: <a id="footer_underline" href="mailto:jamespusherland@gmail.com"> @Atl212</a> , UI Designer: <a id="footer_underline" href="https://space.bilibili.com/10352146">@imat</a>'
 
   # custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
   custom_text: 'Powered by <a id="footer_underline" href="https://hexo.io/">Hexo</a> | Theme <a id="footer_underline" href="https://butterfly.js.org/" style="text-decoration: underline;">Butterfly</a>'

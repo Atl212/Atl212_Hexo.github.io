@@ -10,8 +10,8 @@ https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/dynamic-viewer.ht
 https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/moving-range-limit.html
 https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/viewer-in-modal.html
 https://www.atl212.com/self/dist/simple-line-icons/CODE_OF_CONDUCT.html
-https://www.atl212.com/self/dist/simple-line-icons/CONTRIBUTING.html
 https://www.atl212.com/self/dist/simple-line-icons/History.html
+https://www.atl212.com/self/dist/simple-line-icons/CONTRIBUTING.html
 https://www.atl212.com/self/dist/simple-line-icons/LICENSE.html
 https://www.atl212.com/self/dist/simple-line-icons/README.html
 https://www.atl212.com/self/dist/simple-line-icons/bower.json
