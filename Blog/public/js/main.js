@@ -702,8 +702,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  document.getElementById('go-up').addEventListener('click', () => {
-    btf.scrollToDest(0, 500);
+  document.addEventListener('click', (event) => {
+    if (event.target.id === 'go-up') {
+      console.log('Go-up button clicked');
+      window.btf.scrollToDest(0, 500);
+    }
   });
 
   /**
