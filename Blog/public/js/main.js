@@ -704,7 +704,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', (event) => {
     if (event.target.id === 'go-up') {
-      console.log('Go-up button clicked');
+      // console.log('Go-up button clicked');
       window.btf.scrollToDest(0, 500);
     }
   });
