@@ -18,8 +18,8 @@ https://www.atl212.com/self/dist/viewerjs-1.11.7/docs/examples/viewer-in-modal.h
 https://www.atl212.com/self/dist/viewerjs-1.11.7/CHANGELOG.html
 https://www.atl212.com/self/dist/viewerjs-1.11.7/README.html
 https://www.atl212.com/self/dist/simple-line-icons/package.json
-https://www.atl212.com/self/dist/simple-line-icons/CONTRIBUTING.html
 https://www.atl212.com/self/dist/simple-line-icons/CODE_OF_CONDUCT.html
+https://www.atl212.com/self/dist/simple-line-icons/CONTRIBUTING.html
 https://www.atl212.com/self/dist/simple-line-icons/History.html
 https://www.atl212.com/self/dist/simple-line-icons/LICENSE.html
 https://www.atl212.com/self/dist/simple-line-icons/README.html
